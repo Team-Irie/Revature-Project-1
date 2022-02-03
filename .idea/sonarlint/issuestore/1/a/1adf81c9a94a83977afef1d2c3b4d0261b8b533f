@@ -1,0 +1,16 @@
+
+Q
+java:S1481@"6Remove this unused "preparedStatement" local variable.(½¨“Ğúÿÿÿÿ
+K
+java:S2695T"/This "PreparedStatement" only has 4 parameters.(§¯š#8ÔØŒÁë/
+Q
+java:S2695U"/This "PreparedStatement" only has 4 parameters.(ÖÈşûÿÿÿÿÿ8“¤Àë/
+Y
+java:S1128"7Remove this unused import 'com.revature.models.Person'.(–ÿÀ¡şÿÿÿÿ8êó’Áë/
+[
+java:S1128
+">Remove this unused import 'com.revature.utilities.Encryption'.(íÏËø8êó’Áë/
+q
+java:S1192."ODefine a constant instead of duplicating this literal "account_number" 3 times.(ûüßıÿÿÿÿ8â¿±Àë/
+j
+java:S2095@"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ
