@@ -12,7 +12,7 @@ public class ConnectionUtility {
             e.printStackTrace();
         }
 
-        String url = "jdbc:postgresql://35.224.134.48:5432/postgres";
+        String url = "jdbc:postgresql://34.121.133.234:5432/postgres";
         String userName = System.getenv("DB_USER");
         String password = System.getenv("DB_PASS");
 
