@@ -63,31 +63,25 @@ public class UserDaoImplementation implements UserDao {
     }
 
     @Override
-    public List<User> readByID() {
+    public User readByID(User user) {
         String sql = "select * from user where id = ?";
-        List<User> users = new ArrayList<>();
 
         try (Connection connection = ConnectionUtility.getConnection(); Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(sql);
 
-            while(resultSet.next()) {
-                User user = new User();
+            user.setId(resultSet.getInt("id"));
+            user.setUsername(resultSet.getString("username"));
+            user.setPassword(resultSet.getString("password"));
+            user.setFirstName(resultSet.getString("firstName"));
+            user.setLastName(resultSet.getString("lastName"));
+            user.setEmail(resultSet.getString("email"));
+            user.setRoleID(resultSet.getInt("roleID"));
 
-                user.setId(resultSet.getInt("id"));
-                user.setUsername(resultSet.getString("username"));
-                user.setPassword(resultSet.getString("password"));
-                user.setFirstName(resultSet.getString("firstName"));
-                user.setLastName(resultSet.getString("lastName"));
-                user.setEmail(resultSet.getString("email"));
-                user.setRoleID(resultSet.getInt("roleID"));
-
-                users.add(user);
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return users;
+        return user;
     }
 
     @Override

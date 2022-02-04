@@ -12,7 +12,7 @@ public class UserService {
 
     public List<User> readAll() { return userDao.readAll(); }
 
-    public User readByNumber(User user) { return userDao.readByNumber(user); }
+    public User readByID(User user) { return userDao.readByID(user); }
 
     public boolean update(User user) {
         return userDao.update(user);
