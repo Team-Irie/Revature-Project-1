@@ -1,6 +1,6 @@
 package com.revature.models;
 
-public class Users {
+public class User {
     private int id;
     private String username;
     private String password;
@@ -9,10 +9,10 @@ public class Users {
     private String email;
     private int roleID;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(int id, String username, String password, String firstName, String lastName, String email, int roleID) {
+    public User(int id, String username, String password, String firstName, String lastName, String email, int roleID) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -80,7 +80,7 @@ public class Users {
 
     @Override
     public String toString() {
-        return "Users{" +
+        return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +

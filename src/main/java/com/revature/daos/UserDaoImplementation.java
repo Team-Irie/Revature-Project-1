@@ -1,25 +1,25 @@
 package com.revature.daos;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
-import com.revature.models.Account;
-import com.revature.models.Person;
+import java.util.ArrayList;
+
+import com.revature.models.User;
+import com.revature.models.User;
 import com.revature.utilities.ConnectionUtility;
 import com.revature.utilities.Encryption;
 
-public class AccountDaoImplementation implements AccountDao {
+public class UserDaoImplementation implements UserDao {
     @Override
-    public boolean create(Account account) {
-        String sql = "insert into account (balance, account_number, customer_id) values (?, ?, ?)";
+    public boolean create(User user) {
+        String sql = "insert into user (balance, user_number, user_id) values (?, ?, ?)";
 
         try (Connection connection = ConnectionUtility.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql);){
 
-            preparedStatement.setInt(1, account.getBalance());
-            preparedStatement.setInt(2, account.getAccountNumber());
-            preparedStatement.setInt(3, account.getCustomerId());
+            preparedStatement.setInt(1, user.getBalance());
+            preparedStatement.setInt(2, user.getUserNumber());
+            preparedStatement.setInt(3, user.getCustomerId());
 
             if(preparedStatement.executeUpdate() == 1){
                 return true;
@@ -32,57 +32,57 @@ public class AccountDaoImplementation implements AccountDao {
     }
 
     @Override
-    public List<Account> readAll() {
-        String sql = "select * from account";
-        List<Account> accounts = new ArrayList<>();
+    public List<User> readAll() {
+        String sql = "select * from user";
+        List<User> users = new ArrayList<User>();
 
         try (Connection connection = ConnectionUtility.getConnection(); Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(sql);
 
             while(resultSet.next()) {
-                Account account = new Account();
+                User user = new User();
 
-                account.setBalance(resultSet.getInt("balance"));
-                account.setAccountNumber(resultSet.getInt("account_number"));
-                account.setCustomerId(resultSet.getInt("customer_id"));
+                user.setBalance(resultSet.getInt("balance"));
+                user.setUserNumber(resultSet.getInt("user_number"));
+                user.setCustomerId(resultSet.getInt("user_id"));
 
-                accounts.add(account);
+                users.add(user);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return accounts;
+        return users;
     }
 
     @Override
-    public Account readByNumber(Account account) {
-        String sql = "select * from account where account_number = ?";
+    public User readByNumber(User user) {
+        String sql = "select * from user where user_number = ?";
 
         try (Connection connection = ConnectionUtility.getConnection(); Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(sql);
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            account.setBalance(resultSet.getInt("balance"));
-            account.setAccountNumber(resultSet.getInt("account_number"));
-            account.setCustomerId(resultSet.getInt("customer_id"));
+            user.setBalance(resultSet.getInt("balance"));
+            user.setUserNumber(resultSet.getInt("user_number"));
+            user.setCustomerId(resultSet.getInt("user_id"));
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return account;
+        return user;
     }
 
     @Override
-    public boolean update(Account account) {
-        String sql = "update account set balance = ?, account_number = ?, customer_id = ? where account_number = ?";
+    public boolean update(User user) {
+        String sql = "update user set balance = ?, user_number = ?, user_id = ? where user_number = ?";
 
         try(Connection connection = ConnectionUtility.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            preparedStatement.setInt(4, account.getBalance());
-            preparedStatement.setInt(5, account.getAccountNumber());
-            preparedStatement.setInt(6, account.getCustomerId());
+            preparedStatement.setInt(4, user.getBalance());
+            preparedStatement.setInt(5, user.getUserNumber());
+            preparedStatement.setInt(6, user.getCustomerId());
 
             if(preparedStatement.executeUpdate() == 1) {
                 return true;
@@ -95,11 +95,11 @@ public class AccountDaoImplementation implements AccountDao {
     }
 
     @Override
-    public boolean delete(Account account) {
-        String sql = "delete from account where account_number = ?";
+    public boolean delete(User user) {
+        String sql = "delete from user where user_number = ?";
 
         try(Connection connection = ConnectionUtility.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setString(1, "account_number");
+            preparedStatement.setString(1, "user_number");
 
             if(preparedStatement.executeUpdate() == 1) { return true; }
 

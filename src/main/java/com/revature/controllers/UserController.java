@@ -1,14 +1,14 @@
 package com.revature.controllers;
 
 import io.javalin.http.Context;
-import com.revature.models.Person;
-import com.revature.services.PersonService;
+import com.revature.models.User;
+import com.revature.services.UserService;
 
-public class PersonController {
-    PersonService personService = new PersonService();
+public class UserController {
+    UserService userService = new UserService();
 
     public void handleCreate(Context context) {
-        if(personService.create(context.bodyAsClass(Person.class))) {
+        if(userService.create(context.bodyAsClass(User.class))) {
             context.status(201);
         } else {
             context.status(400);
@@ -16,18 +16,18 @@ public class PersonController {
     }
 
     public void handleReadAll(Context context) {
-        context.json(personService.readAll());
+        context.json(userService.readAll());
     }
 
     public void handleReadByID(Context context) {
-        context.json(personService.readByID(context.bodyAsClass(Person.class)));
+        context.json(userService.readByID(context.bodyAsClass(User.class)));
     }
 
     public void handleUpdate(Context context) {
-        Person person = context.bodyAsClass(Person.class);
-        person.setId(Integer.parseInt(context.pathParam("id")));
+        User user = context.bodyAsClass(User.class);
+        user.setId(Integer.parseInt(context.pathParam("id")));
 
-        if(personService.update(person)) {
+        if(userService.update(user)) {
             context.status(200);
         } else {
             context.status(400);
