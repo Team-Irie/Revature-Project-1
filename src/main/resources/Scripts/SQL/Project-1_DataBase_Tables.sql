@@ -3,35 +3,35 @@ create table reimbursement(
 	amount integer,
 	submitted timestamp,
 	resolved timestamp,
-	description varchar(250),
+	description varchar2(250),
 	receipt blob,
-	author integer,
-	resolver integer,
-	status_id integer,
-	type_id integer
+	author integer references user,
+	resolver integer REFERENCES user,
+	status_id integer references reimbursement_status,
+	type_id integer REFERENCES reimbursement_type
 )
 
-create table users(
+create table user(
 	id integer primary key,
-	username varchar(50),
-	password varchar(50),
-	first_name varchar(100),
-	last_name varchar(100),
-	email varchar(150),
-	role_id integer
+	username varchar2(50),
+	password varchar2(50),
+	first_name varchar2(100),
+	last_name varchar2(100),
+	email varchar2(150),
+	role_id integer REFERENCES user_roles
 )
 
 create table reimbursement_status(
 	id integer primary key,
-	status varchar(10)
+	status varchar2(10)
 )
 
 create table reimbursement_type(
 	id integer primary key,
-	type varchar(10)
+	type varchar2(10)
 )
 
 create table user_roles(
 	id integer primary key,
-	role varchar(10)
+	role varchar2(10)
 )
