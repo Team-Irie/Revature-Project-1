@@ -43,3 +43,15 @@ _
 /src/main/java/com/revature/daos/AccountDao.java,0\e\0ef42072d5f922b47e0a731310fdd6db8d7ff440
 m
 =src/main/java/com/revature/daos/AccountDaoImplementation.java,1\a\1adf81c9a94a83977afef1d2c3b4d0261b8b533f
+o
+?src/main/java/com/revature/controllers/AppExceptionHandler.java,e\0\e09e48648ab1ccc286598eef34f2efa18f675810
+d
+4src/main/java/com/revature/services/UserService.java,d\2\d2be61aa398606e15331a1cc4aeafeccda405368
+j
+:src/main/java/com/revature/controllers/UserController.java,3\3\33768bacf3381e61332680f8bd1e89d9a381ca67
+j
+:src/main/java/com/revature/daos/UserDaoImplementation.java,5\6\56f654bc758670f49c85191a05da434f231e58ae
+[
++src/main/java/com/revature/models/User.java,c\1\c185cfbb3b91f30f1c6d725663f8833dc796c0aa
+\
+,src/main/java/com/revature/daos/UserDao.java,5\4\54a0dd0f0986c9e91923c6c522e50fa6aa0d3d07
