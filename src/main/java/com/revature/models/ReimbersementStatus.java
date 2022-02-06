@@ -1,22 +1,22 @@
 package com.revature.models;
 
 public class ReimbersementStatus {
-    private int id;
+    private short id;
     private String status;
 
     public ReimbersementStatus() {
     }
 
-    public ReimbersementStatus(int id, String status) {
+    public ReimbersementStatus(short id, String status) {
         this.id = id;
         this.status = status;
     }
 
-    public int getId() {
+    public short getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(short id) {
         this.id = id;
     }
 

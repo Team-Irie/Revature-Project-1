@@ -1,6 +1,6 @@
 package com.revature.models;
 
-import java.sql.Blob;
+import java.util.Arrays;
 import java.sql.Timestamp;
 
 public class Reimbursement {
@@ -9,16 +9,16 @@ public class Reimbursement {
     private Timestamp submitted;
     private Timestamp resolved;
     private String description;
-    private Blob receipt;
+    private byte[] receipt;
     private int author;
     private int resolver;
-    private int statusID;
-    private int typeID;
+    private short statusID;
+    private short typeID;
 
     public Reimbursement() {
     }
 
-    public Reimbursement(int id, int amount, Timestamp submitted, Timestamp resolved, String description, Blob receipt, int author, int resolver, int statusID, int typeID) {
+    public Reimbursement(int id, int amount, Timestamp submitted, Timestamp resolved, String description, byte[] receipt, int author, int resolver, short statusID, short typeID) {
         this.id = id;
         this.amount = amount;
         this.submitted = submitted;
@@ -71,11 +71,11 @@ public class Reimbursement {
         this.description = description;
     }
 
-    public Blob getReceipt() {
+    public byte[] getReceipt() {
         return receipt;
     }
 
-    public void setReceipt(Blob receipt) {
+    public void setReceipt(byte[] receipt) {
         this.receipt = receipt;
     }
 
@@ -95,19 +95,19 @@ public class Reimbursement {
         this.resolver = resolver;
     }
 
-    public int getStatusID() {
+    public short getStatusID() {
         return statusID;
     }
 
-    public void setStatusID(int statusID) {
+    public void setStatusID(short statusID) {
         this.statusID = statusID;
     }
 
-    public int getTypeID() {
+    public short getTypeID() {
         return typeID;
     }
 
-    public void setTypeID(int typeID) {
+    public void setTypeID(short typeID) {
         this.typeID = typeID;
     }
 
@@ -119,7 +119,7 @@ public class Reimbursement {
                 ", submitted=" + submitted +
                 ", resolved=" + resolved +
                 ", description='" + description + '\'' +
-                ", receipt=" + receipt +
+                ", receipt=" + Arrays.toString(receipt) +
                 ", author=" + author +
                 ", resolver=" + resolver +
                 ", statusID=" + statusID +
