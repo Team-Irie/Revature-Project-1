@@ -7,16 +7,6 @@
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-`
-0src/main/java/com/revature/models/UserRoles.java,f\d\fdd5c0aa2b892db39dcd7d0dc8f73fdff5b4153d
-h
-8src/main/java/com/revature/models/ReimbursementType.java,e\3\e3314d8b9464e63ab4bf343307247d9367b8da17
-d
-4src/main/java/com/revature/models/Reimbursement.java,0\7\07ce5d231ade592ee611d10df4fa37320c6a1103
-j
-:src/main/java/com/revature/models/ReimbersementStatus.java,6\8\68cf04f260af9fc88fa85604da23ebc28e3dc8ee
-[
-+src/main/java/com/revature/models/User.java,c\1\c185cfbb3b91f30f1c6d725663f8833dc796c0aa
 n
 >src/main/java/com/revature/application/JavalinApplication.java,1\e\1eaa832c2c577b4cd89db4079091d0c0530a9c21
 o
