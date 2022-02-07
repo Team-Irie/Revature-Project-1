@@ -1,22 +1,22 @@
 package com.revature.models;
 
 public class UserRoles {
-    private short id;
+    private int id;
     private String role;
 
     public UserRoles() {
     }
 
-    public UserRoles(short id, String role) {
+    public UserRoles(int id, String role) {
         this.id = id;
         this.role = role;
     }
 
-    public short getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(short id) {
+    public void setId(int id) {
         this.id = id;
     }
 

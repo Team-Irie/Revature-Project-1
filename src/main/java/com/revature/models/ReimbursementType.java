@@ -1,22 +1,22 @@
 package com.revature.models;
 
 public class ReimbursementType {
-    private short id;
+    private int id;
     private String type;
 
     public ReimbursementType() {
     }
 
-    public ReimbursementType(short id, String type) {
+    public ReimbursementType(int id, String type) {
         this.id = id;
         this.type = type;
     }
 
-    public short getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(short id) {
+    public void setId(int id) {
         this.id = id;
     }
 

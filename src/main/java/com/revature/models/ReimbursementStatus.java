@@ -1,22 +1,22 @@
 package com.revature.models;
 
-public class ReimbersementStatus {
-    private short id;
+public class ReimbursementStatus {
+    private int id;
     private String status;
 
-    public ReimbersementStatus() {
+    public ReimbursementStatus() {
     }
 
-    public ReimbersementStatus(short id, String status) {
+    public ReimbursementStatus(int id, String status) {
         this.id = id;
         this.status = status;
     }
 
-    public short getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(short id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -30,7 +30,7 @@ public class ReimbersementStatus {
 
     @Override
     public String toString() {
-        return "ReimbersementStatus{" +
+        return "ReimbursementStatus{" +
                 "id=" + id +
                 ", status='" + status + '\'' +
                 '}';

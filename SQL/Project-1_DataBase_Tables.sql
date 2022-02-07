@@ -7,8 +7,8 @@ create table reimbursement(
 	receipt bytea,
 	author integer references users,
 	resolver integer references users,
-	status_id smallint references reimbursement_status,
-	type_id smallint references reimbursement_type
+	status_id integer references reimbursement_status,
+	type_id integer references reimbursement_type
 )
 
 create table users(
@@ -18,26 +18,20 @@ create table users(
 	first_name varchar(100),
 	last_name varchar(100),
 	email varchar(150) unique,
-	role_id smallint references user_roles
+	role_id integer references user_roles
 )
 
 create table reimbursement_status(
-	id smallint primary key,
+	id integer primary key,
 	status varchar(10)
 )
 
 create table reimbursement_type(
-	id smallint primary key,
+	id integer primary key,
 	user_type varchar(10)
 )
 
 create table user_roles(
-	id smallint primary key,
+	id integer primary key,
 	user_role varchar(10)
 )
-
-drop table user_roles;
-drop table reimbursement_type;
-drop table reimbursement_status;
-drop table reimbursement;
-drop table users;

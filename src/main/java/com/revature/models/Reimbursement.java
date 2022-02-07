@@ -12,13 +12,25 @@ public class Reimbursement {
     private byte[] receipt;
     private int author;
     private int resolver;
-    private short statusID;
-    private short typeID;
+    private int statusID;
+    private int typeID;
 
     public Reimbursement() {
     }
 
-    public Reimbursement(int id, int amount, Timestamp submitted, Timestamp resolved, String description, byte[] receipt, int author, int resolver, short statusID, short typeID) {
+    public Reimbursement(int amount, Timestamp submitted, Timestamp resolved, String description, byte[] receipt, int author, int resolver, int statusID, int typeID) {
+        this.amount = amount;
+        this.submitted = submitted;
+        this.resolved = resolved;
+        this.description = description;
+        this.receipt = receipt;
+        this.author = author;
+        this.resolver = resolver;
+        this.statusID = statusID;
+        this.typeID = typeID;
+    }
+
+    public Reimbursement(int id, int amount, Timestamp submitted, Timestamp resolved, String description, byte[] receipt, int author, int resolver, int statusID, int typeID) {
         this.id = id;
         this.amount = amount;
         this.submitted = submitted;
@@ -95,19 +107,19 @@ public class Reimbursement {
         this.resolver = resolver;
     }
 
-    public short getStatusID() {
+    public int getStatusID() {
         return statusID;
     }
 
-    public void setStatusID(short statusID) {
+    public void setStatusID(int statusID) {
         this.statusID = statusID;
     }
 
-    public short getTypeID() {
+    public int getTypeID() {
         return typeID;
     }
 
-    public void setTypeID(short typeID) {
+    public void setTypeID(int typeID) {
         this.typeID = typeID;
     }
 
