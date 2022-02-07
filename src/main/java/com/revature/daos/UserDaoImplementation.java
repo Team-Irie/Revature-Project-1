@@ -51,7 +51,7 @@ public class UserDaoImplementation implements UserDao {
                 user.setFirstName(resultSet.getString("firstName"));
                 user.setLastName(resultSet.getString("lastName"));
                 user.setEmail(resultSet.getString("email"));
-                user.setRoleID(resultSet.getInt("roleID"));
+                user.setRoleID(resultSet.getByte("roleID"));
 
                 users.add(user);
             }
@@ -75,7 +75,7 @@ public class UserDaoImplementation implements UserDao {
             user.setFirstName(resultSet.getString("firstName"));
             user.setLastName(resultSet.getString("lastName"));
             user.setEmail(resultSet.getString("email"));
-            user.setRoleID(resultSet.getInt("roleID"));
+            user.setRoleID(resultSet.getByte("roleID"));
 
         } catch (SQLException e) {
             e.printStackTrace();

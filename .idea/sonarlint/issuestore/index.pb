@@ -17,13 +17,7 @@ d
 4src/main/java/com/revature/utilities/LogUtility.java,5\6\56e24d214452dab4effb1a1fe87a4d0347d987e8
 d
 4src/main/java/com/revature/utilities/Encryption.java,8\c\8c48298eb168d3ba1f831de84a7d35f509f2d2c9
-k
-;src/main/java/com/revature/utilities/ConnectionUtility.java,1\4\140b2ecbace3435eb3dfcc267ea4519f7b334e7a
 \
 ,src/main/java/com/revature/daos/UserDao.java,5\4\54a0dd0f0986c9e91923c6c522e50fa6aa0d3d07
-j
-:src/main/java/com/revature/daos/UserDaoImplementation.java,5\6\56f654bc758670f49c85191a05da434f231e58ae
 d
 4src/main/java/com/revature/services/UserService.java,d\2\d2be61aa398606e15331a1cc4aeafeccda405368
-m
-=src/main/java/com/revature/application/ApplicationDriver.java,9\c\9cf10e091dd8dabc8e1d855f457f53ea7c3e390f
