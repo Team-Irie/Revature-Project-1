@@ -8,7 +8,6 @@ import com.revature.controllers.AppExceptionHandler;
 import static io.javalin.apibuilder.ApiBuilder.*;
 
 public class JavalinApplication {
-        final private LogUtility logUtility = new LogUtility();
         final private UserController personController = new UserController();
         final private AppExceptionHandler appExceptionHandler = new AppExceptionHandler();
 
@@ -24,7 +23,7 @@ public class JavalinApplication {
             });
         });
 
-            before("*", logUtility::logRequest);
+            //before("*", LogUtility.logger("Test"));
 
         }).exception(NumberFormatException.class, appExceptionHandler::handleNumberFormatException);
 
