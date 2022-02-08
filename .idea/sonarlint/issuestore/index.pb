@@ -17,12 +17,22 @@ d
 4src/main/java/com/revature/utilities/LogUtility.java,5\6\56e24d214452dab4effb1a1fe87a4d0347d987e8
 g
 7src/main/java/com/revature/types/ReimbursementType.java,6\2\62dda474d10f2d2d756740352ee36763415d41b8
+<<<<<<< HEAD
 k
 ;src/main/java/com/revature/utilities/ConnectionUtility.java,1\4\140b2ecbace3435eb3dfcc267ea4519f7b334e7a
+=======
+j
+:src/main/java/com/revature/controllers/UserController.java,3\3\33768bacf3381e61332680f8bd1e89d9a381ca67
+d
+4src/main/java/com/revature/services/UserService.java,d\2\d2be61aa398606e15331a1cc4aeafeccda405368
+^
+.src/main/java/com/revature/types/UserRole.java,5\3\5369ac48ec7426f9d727f6173e06438ee817f344
+>>>>>>> 597712a41c0fb513917d5cf7a5f9ac23c3fde40b
 `
 0src/main/java/com/revature/models/UserRoles.java,f\d\fdd5c0aa2b892db39dcd7d0dc8f73fdff5b4153d
 h
 8src/main/java/com/revature/models/ReimbursementType.java,e\3\e3314d8b9464e63ab4bf343307247d9367b8da17
+<<<<<<< HEAD
 d
 4src/main/java/com/revature/models/Reimbursement.java,0\7\07ce5d231ade592ee611d10df4fa37320c6a1103
 \
@@ -45,3 +55,7 @@ j
 :src/main/java/com/revature/controllers/UserController.java,3\3\33768bacf3381e61332680f8bd1e89d9a381ca67
 m
 =src/main/java/com/revature/application/ApplicationDriver.java,9\c\9cf10e091dd8dabc8e1d855f457f53ea7c3e390f
+=======
+j
+:src/main/java/com/revature/models/ReimbursementStatus.java,4\1\4182337864a3917f1215cb832d0d32ca0d5c47ae
+>>>>>>> 597712a41c0fb513917d5cf7a5f9ac23c3fde40b
