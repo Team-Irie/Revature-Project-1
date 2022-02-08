@@ -10,9 +10,9 @@ public class UserService {
 
     public boolean create(User user) { return userDao.create(user); }
 
-    public List<User> readAll() { return userDao.readAll(); }
+    public List<User> getAll() { return userDao.getAll(); }
 
-    public User readByID(User user) { return userDao.readByID(user); }
+    public User getByID(User user) { return userDao.getByID(user.getId()); }
 
     public boolean update(User user) {
         return userDao.update(user);

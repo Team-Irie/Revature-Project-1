@@ -1,12 +1,10 @@
 
-[
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‡Ä°®
 `
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‰Çø¨úÿÿÿÿ
-[
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ü›ş
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ıº ûÿÿÿÿ
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‰Çø¨úÿÿÿÿ8áê¡Óí/
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ü›ş8âê¡Óí/
 I
-java:S1602",Remove useless curly braces around statement(ü›ş8Üıûí/
+java:S1602",Remove useless curly braces around statement(ü›ş8äê¡Óí/
 X	java:S125"<This block of commented-out lines of code should be removed.(ŠÙºÃ8Üıûí/
-[
-java:S1128">Remove this unused import 'com.revature.utilities.LogUtility'.(ò·Ï«8Üıûí/

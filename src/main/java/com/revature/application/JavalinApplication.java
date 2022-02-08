@@ -8,18 +8,18 @@ import com.revature.controllers.AppExceptionHandler;
 import static io.javalin.apibuilder.ApiBuilder.*;
 
 public class JavalinApplication {
-        final private UserController personController = new UserController();
+        final private UserController userController = new UserController();
         final private AppExceptionHandler appExceptionHandler = new AppExceptionHandler();
 
-        final private Javalin application = Javalin.create().routes(()->{
+        final private Javalin application = Javalin.create().routes(() -> {
         path("users",()-> {
-            post(personController::handleCreate);
-            get(personController::handleReadAll);
+            post(userController::handleCreate);
+            get(userController::handleGetAll);
 
             path("{id}", () -> {
-                get(personController::handleReadByID);
-                put(personController::handleUpdate);
-                delete(personController::handleDelete);
+                get(userController::handleGetByID);
+                put(userController::handleUpdate);
+                delete(userController::handleDelete);
             });
         });
 
