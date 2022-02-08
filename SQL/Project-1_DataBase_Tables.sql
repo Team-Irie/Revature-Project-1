@@ -5,10 +5,10 @@ create table reimbursement(
 	resolved timestamp,
 	description varchar(250),
 	receipt bytea,
-	author integer references users,
-	resolver integer references users,
-	status_id integer references reimbursement_status,
-	type_id integer references reimbursement_type
+	author integer references users(id),
+	resolver integer references users(id),
+	status_id integer references reimbursement_status(id),
+	type_id integer references reimbursement_type(id)
 )
 
 create table users(
@@ -18,7 +18,7 @@ create table users(
 	first_name varchar(100),
 	last_name varchar(100),
 	email varchar(150) unique,
-	role_id integer references user_roles
+	role_id integer references user_roles(id)
 )
 
 create table reimbursement_status(

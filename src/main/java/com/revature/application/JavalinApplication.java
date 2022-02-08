@@ -3,7 +3,7 @@ package com.revature.application;
 import io.javalin.Javalin;
 import com.revature.utilities.LogUtility;
 import com.revature.controllers.UserController;
-import com.revature.controllers.AppExceptionHandler;
+import com.revature.exceptions.AppExceptionHandler;
 
 import static io.javalin.apibuilder.ApiBuilder.*;
 
