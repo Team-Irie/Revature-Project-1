@@ -12,9 +12,9 @@ public class ConnectionUtility {
             e.printStackTrace();
         }
 
-        String ip = "35.236.196.118";
-        String userName = "postgres";
-        String password = "0cljBqBJxf21q29K";
+        String ip = "";
+        String userName = "";
+        String password = "";
 
         String url = "jdbc:postgresql://" + ip + ":5432/postgres";
         System.out.println(url);
