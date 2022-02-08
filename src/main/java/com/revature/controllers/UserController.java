@@ -5,7 +5,7 @@ import com.revature.models.User;
 import com.revature.services.UserService;
 
 public class UserController {
-    UserService userService = new UserService();
+    private UserService userService = new UserService();
 
     public void handleCreate(Context context) {
         if(userService.create(context.bodyAsClass(User.class))) {
@@ -15,15 +15,16 @@ public class UserController {
         }
     }
 
-    public void handleReadAll(Context context) {
-        context.json(userService.readAll());
+    public void handleGetAll(Context context) {
+        context.json(userService.getAll());
     }
 
-    public void handleReadByID(Context context) {
-        context.json(userService.readByID(context.bodyAsClass(User.class)));
-    }
 
-    public void handleUpdate(Context context) {
+    public void handleGetByID(Context context) {
+        context.json(userService.getByID(context.bodyAsClass(User.class)));
+    };
+
+    public void handleUpdate (Context context) {
         User user = context.bodyAsClass(User.class);
         user.setId(Integer.parseInt(context.pathParam("id")));
 
