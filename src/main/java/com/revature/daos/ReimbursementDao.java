@@ -23,7 +23,7 @@ View reimbursement requests of a specific employee
 
 public interface ReimbursementDao {
     // Employee - Submit a reimbursement request
-    public void create(Reimbursement reimbursement);
+    public boolean create(Reimbursement reimbursement);
 
     // Employee - View pending reimbursement requests
     // Employee - View resolved reimbursement requests

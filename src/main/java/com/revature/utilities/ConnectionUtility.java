@@ -12,11 +12,14 @@ public class ConnectionUtility {
             e.printStackTrace();
         }
 
-        String ip = System.getenv("DB_IP");
-        String userName = System.getenv("DB_USER_NAME");
-        String password = System.getenv("DB_PASSWORD");
+        String ip = "35.236.196.118";
+        String userName = "postgres";
+        String password = "0cljBqBJxf21q29K";
 
         String url = "jdbc:postgresql://" + ip + ":5432/postgres";
+        System.out.println(url);
+        System.out.println(userName);
+        System.out.println(password);
 
         return DriverManager.getConnection(url, userName, password);
     }

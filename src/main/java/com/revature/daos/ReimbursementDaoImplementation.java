@@ -28,8 +28,8 @@ View reimbursement requests of a specific employee
 public class ReimbursementDaoImplementation implements ReimbursementDao {
     // Submit a reimbursement request
     @Override
-    public void create(Reimbursement reimbursement) {
-        String sql = "insert into reimbursement (id, amount, submitted, resolved, description, receipt, author, resolver, statusID, typeID) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public boolean create(Reimbursement reimbursement) {
+        String sql = "insert into reimbursement (id, amount, submitted, resolved, description, receipt, author, resolver, status_id, type_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = ConnectionUtility.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
@@ -43,11 +43,13 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
                 ps.setInt(8, reimbursement.getResolver());
                 ps.setInt(9, reimbursement.getStatusID());
                 ps.setInt(10, reimbursement.getTypeID());
-
+            if(ps.executeUpdate() == 1) {
+                return true;
+            }
         } catch (SQLException e){
             e.printStackTrace();
         }
-
+        return false;
     }
 
     @Override
