@@ -38,17 +38,17 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
     //View pending reimbursement requests
     //View resolved reimbursement requests
     @Override
-    public List<Reimbursement> readByAuthorAndStatusId(int author, int statusID) {
-        String sql = "select * from reimbursement where author = ? and statusID = ?";
-        Reimbursement reimbursement = new Reimbursement();
+    public List<Reimbursement> readByAuthorAndStatusId(int author, int status_id) {
         List<Reimbursement> reimbursements = new ArrayList<>();
+
+        String sql = "select * from reimbursement where author = ? and status_id = ?";
 
         try (Connection connection = ConnectionUtility.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
-
-            ps.setInt(1, reimbursement.getAuthor());
-            ps.setInt(2, reimbursement.getStatusID());
-            ResultSet resultSet = ps.executeQuery(sql);
+            Reimbursement reimbursement = new Reimbursement();
+            ps.setInt(1, author);
+            ps.setInt(2, status_id);
+            ResultSet resultSet = ps.executeQuery();
 
             while(resultSet.next()) {
                 reimbursement.setId(resultSet.getInt("id"));
@@ -59,8 +59,8 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
                 reimbursement.setReceipt(resultSet.getBytes("receipt"));
                 reimbursement.setAuthor(resultSet.getByte("author"));
                 reimbursement.setResolver(resultSet.getInt("resolver"));
-                reimbursement.setStatusID(resultSet.getInt("statusID"));
-                reimbursement.setTypeID((resultSet.getInt("typeID")));
+                reimbursement.setStatusID(resultSet.getInt("status_id"));
+                reimbursement.setTypeID((resultSet.getInt("type_id")));
                 reimbursements.add(reimbursement);
             }
         } catch (SQLException e) {

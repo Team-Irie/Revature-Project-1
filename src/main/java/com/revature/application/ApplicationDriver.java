@@ -11,6 +11,7 @@ import com.revature.daos.UserDaoImplementation;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 public class ApplicationDriver {
     public static void main(String[] args){
@@ -21,6 +22,6 @@ public class ApplicationDriver {
         Reimbursement reimbursement = new Reimbursement();
         ReimbursementDaoImplementation reimbursementDaoImplementation = new ReimbursementDaoImplementation();
         System.out.println("this should work");
-        ReimbursementDaoImplementation.readByAuthorAndStatusId(1, 1);
+        System.out.println(reimbursementDaoImplementation.readByAuthorAndStatusId(1, 1));
     }
 }
