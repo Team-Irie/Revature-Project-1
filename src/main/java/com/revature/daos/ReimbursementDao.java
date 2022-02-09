@@ -1,5 +1,6 @@
 package com.revature.daos;
 
+import java.sql.Timestamp;
 import java.util.List;
 import com.revature.models.Reimbursement;
 
@@ -20,7 +21,7 @@ public interface ReimbursementDao {
     public List<Reimbursement> readByAuthorAndStatusId(int author, int status_id);
 
     // Approve/Deny pending reimbursement requests
-    public boolean update(int author, int resolver, int status_id);
+    public boolean update(Timestamp timestamp, int author, int resolver, int status_id);
 
     // View all pending requests of all employees
     // View all resolved requests of all employees

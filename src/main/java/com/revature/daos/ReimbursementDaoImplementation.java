@@ -72,16 +72,15 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
 
     //Approve/Deny pending reimbursement requests
     @Override
-    public boolean update(int author, int resolver, int statusID) {
-        String sql = "update table set resolved = ?, resolver = ?, status_id = ? where author = ?";
-        Reimbursement reimbursement = new Reimbursement();
+    public boolean update(Timestamp timestamp, int resolver, int status_id, int author) {
+        String sql = "update reimbursement set resolved = ?, resolver = ?, status_id = ? where author = ?";
 
         try (Connection connection = ConnectionUtility.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setTimestamp(1, reimbursement.getResolved());
-            ps.setInt(2, reimbursement.getResolver());
-            ps.setInt(3, reimbursement.getStatusID());
-            ps.setInt(4, reimbursement.getAuthor());
+            ps.setTimestamp(1, timestamp);
+            ps.setInt(2, resolver);
+            ps.setInt(3, status_id);
+            ps.setInt(4, author);
             if(ps.executeUpdate() == 1) {
                 return true;
             }
