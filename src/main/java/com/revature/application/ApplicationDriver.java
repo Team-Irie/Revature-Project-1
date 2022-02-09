@@ -19,6 +19,6 @@ public class ApplicationDriver {
         Reimbursement reimbursement = new Reimbursement();
         ReimbursementDaoImplementation reimbursementDaoImplementation = new ReimbursementDaoImplementation();
         System.out.println("this should work");
-        reimbursementDaoImplementation.create(new Reimbursement(20, timestamp2, null, "office supplies", null, 1,1, 1,4));
+        ReimbursementDaoImplementation.readByAuthhor
     }
 }
