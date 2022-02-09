@@ -13,16 +13,15 @@ public class JavalinApplication {
         final private AppExceptionHandler appExceptionHandler = new AppExceptionHandler();
 
         final private Javalin application = Javalin.create().routes(() -> {
-        path("users",()-> {
-            post(userController::handleCreate);
-            get(userController::handleGetAll);
-
-            path("{id}", () -> {
-                get(userController::handleGetByID);
-                put(userController::handleUpdate);
-                delete(userController::handleDelete);
+            path("users",()->{
+                get(userController::handleGetAll);
+                post(userController::handleCreate);
+                path("{id}",()->{
+                    get(userController::handleGetByID);
+                    put(userController::handleUpdate);
+                    delete(userController::handleDeleteByID);
+                });
             });
-        });
 
         before("*", logUtility::logRequest);
 

@@ -12,13 +12,13 @@ public class UserService {
 
     public List<User> getAll() { return userDao.getAll(); }
 
-    public User getByID(User user) { return userDao.getByID(user.getId()); }
+    public User getByID(int id) { return userDao.getByID(id); }
 
     public boolean update(User user) {
         return userDao.update(user);
     }
 
-    public boolean delete(User user) {
-        return userDao.delete(user);
+    public boolean deleteByID(User user) {
+        return userDao.deleteByID(user.getId());
     }
 }

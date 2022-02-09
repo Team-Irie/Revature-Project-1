@@ -14,24 +14,30 @@ create table user_roles(
 );
 
 create table users(
-	id integer primary key,
+	id serial primary key,
 	username varchar(50) unique,
 	password varchar(50),
 	first_name varchar(100),
 	last_name varchar(100),
 	email varchar(150) unique,
-	role_id integer references user_roles(id)
+	role_id integer
 );
 
 create table reimbursement(
-	id integer primary key,
+	id serial primary key,
 	amount integer,
 	submitted timestamp,
 	resolved timestamp,
 	description varchar(250),
 	receipt bytea,
-	author integer references users(id),
-	resolver integer references users(id),
-	status_id integer references reimbursement_status(id),
-	type_id integer references reimbursement_type(id)
+	author integer references users,
+	resolver integer references users,
+	status_id integer references reimbursement_status,
+	type_id integer references reimbursement_type
 );
+
+drop table reimbursement;
+drop table reimbursement_status;
+drop table reimbursement_type;
+drop table users;
+drop table user_roles;
