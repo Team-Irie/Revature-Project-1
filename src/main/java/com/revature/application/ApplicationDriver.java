@@ -1,6 +1,8 @@
 package com.revature.application;
+
 import com.revature.models.Reimbursement;
-import com.revature.daos.ReimbursementDao;
+import com.revature.types.ReimbursementStatus;
+import com.revature.types.ReimbursementType;
 import com.revature.daos.ReimbursementDaoImplementation;
 
 import com.revature.models.User;
@@ -19,6 +21,6 @@ public class ApplicationDriver {
         Reimbursement reimbursement = new Reimbursement();
         ReimbursementDaoImplementation reimbursementDaoImplementation = new ReimbursementDaoImplementation();
         System.out.println("this should work");
-        ReimbursementDaoImplementation.readByAuthhor
+        ReimbursementDaoImplementation.readByAuthorAndStatusId(1, 1);
     }
 }
