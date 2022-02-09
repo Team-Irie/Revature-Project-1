@@ -14,11 +14,8 @@ public class ApplicationDriver {
     public static void main(String[] args){
         JavalinApplication application = new JavalinApplication();
         application.start(8080);
-        Date date = new Date();
-        Timestamp timestamp2 = new Timestamp(date.getTime());
-        Reimbursement reimbursement = new Reimbursement();
-        ReimbursementDaoImplementation reimbursementDaoImplementation = new ReimbursementDaoImplementation();
-        System.out.println("this should work");
-        reimbursementDaoImplementation.create(new Reimbursement(20, timestamp2, null, "office supplies", null, 1,1, 1,4));
+
+        UserDaoImplementation userDaoImplementation = new UserDaoImplementation();
+        userDaoImplementation.create(new User(1,"UserName","password","FirstName","LastName","email@gmail.com", 0));
     }
 }

@@ -35,3 +35,13 @@ create table user_roles(
 	id integer primary key,
 	user_role varchar(10)
 )
+
+drop table users;
+drop table user_roles;
+drop table reimbursement;
+drop table reimbursement_type;
+drop table reimbursement_status;
+
+select * from users;
+
+insert into users (id, username, "password", first_name, last_name, email, role_id) values (2,'UserName2','Password','FirstName','LastName','email2@gmail.com', 0);

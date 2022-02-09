@@ -11,16 +11,17 @@ import com.revature.utilities.ConnectionUtility;
 public class UserDaoImplementation implements UserDao {
     @Override
     public boolean create(User user) {
-        String sql = "insert into users (username, password, first_name, last_name, email, role_id) values (?, ?, ?, ?, ?, ?)";
+        String sql = "insert into users (id, username, password, first_name, last_name, email, role_id) values (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = ConnectionUtility.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            preparedStatement.setString(1, user.getUsername());
-            preparedStatement.setString(2, user.getPassword());
-            preparedStatement.setString(3, user.getFirstName());
-            preparedStatement.setString(4, user.getLastName());
-            preparedStatement.setString(5, user.getEmail());
-            preparedStatement.setInt(6, user.getRoleID());
+            preparedStatement.setInt(1, user.getId());
+            preparedStatement.setString(2, user.getUsername());
+            preparedStatement.setString(3, user.getPassword());
+            preparedStatement.setString(4, user.getFirstName());
+            preparedStatement.setString(5, user.getLastName());
+            preparedStatement.setString(6, user.getEmail());
+            preparedStatement.setInt(7, user.getRoleID());
 
             if(preparedStatement.executeUpdate() == 1) { return true; }
 
