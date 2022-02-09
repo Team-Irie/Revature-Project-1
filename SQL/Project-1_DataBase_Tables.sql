@@ -1,15 +1,17 @@
-create table reimbursement(
+create table reimbursement_status(
 	id integer primary key,
-	amount integer,
-	submitted timestamp,
-	resolved timestamp,
-	description varchar(250),
-	receipt bytea,
-	author integer references users,
-	resolver integer references users,
-	status_id integer references reimbursement_status,
-	type_id integer references reimbursement_type
-)
+	status varchar(10)
+);
+
+create table reimbursement_type(
+	id integer primary key,
+	user_type varchar(10)
+);
+
+create table user_roles(
+	id integer primary key,
+	user_role varchar(10)
+);
 
 create table users(
 	id integer primary key,
@@ -18,20 +20,18 @@ create table users(
 	first_name varchar(100),
 	last_name varchar(100),
 	email varchar(150) unique,
-	role_id integer references user_roles
-)
+	role_id integer references user_roles(id)
+);
 
-create table reimbursement_status(
+create table reimbursement(
 	id integer primary key,
-	status varchar(10)
-)
-
-create table reimbursement_type(
-	id integer primary key,
-	user_type varchar(10)
-)
-
-create table user_roles(
-	id integer primary key,
-	user_role varchar(10)
-)
+	amount integer,
+	submitted timestamp,
+	resolved timestamp,
+	description varchar(250),
+	receipt bytea,
+	author integer references users(id),
+	resolver integer references users(id),
+	status_id integer references reimbursement_status(id),
+	type_id integer references reimbursement_type(id)
+);
