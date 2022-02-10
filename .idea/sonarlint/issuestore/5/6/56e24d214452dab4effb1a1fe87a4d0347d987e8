@@ -1,6 +1,3 @@
 
-2
-java:S1116
-"Remove this empty statement.(ς²Φª
-v
-java:S1104"[Make consoleAppender a static final constant or non-public and provide accessors if needed.(ζ®Μÿÿÿÿÿ
+U
+java:S1068"3Remove this unused "consoleAppender" private field.(¬‚μόÿÿÿÿ8¨ξ/
