@@ -1,3 +1,5 @@
 
-U
-java:S1068"3Remove this unused "consoleAppender" private field.(¬‚μόÿÿÿÿ8¨ξ/
+W
+java:S1118":Add a private constructor to hide the implicit public one.(Βώ8”Ζªξ/
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(φήΌ®8”Ζªξ/

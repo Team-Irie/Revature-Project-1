@@ -11,8 +11,6 @@ import com.revature.utilities.LogUtility;
 import com.revature.utilities.ConnectionUtility;
 
 public class UserDaoImplementation implements UserDao {
-    private final LogUtility logUtility = new LogUtility();
-
     @Override
     public boolean create(User user) {
         String sql = "insert into users (username, password, first_name, last_name, email, role_id) values (?, ?, ?, ?, ?, ?)";
@@ -26,11 +24,7 @@ public class UserDaoImplementation implements UserDao {
             preparedStatement.setString(5, user.getEmail());
             preparedStatement.setInt(6, user.getRoleID().ordinal());
 
-            logUtility.logTrace("user created");
-
             if(preparedStatement.executeUpdate() == 1) {
-
-                //logUtility.logTrace("user created");
                 return true;
             }
 

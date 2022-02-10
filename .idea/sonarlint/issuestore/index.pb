@@ -1,32 +1,11 @@
-<<<<<<< HEAD
 
-s
-Csrc/main/java/com/revature/daos/ReimbursementDaoImplementation.java,e\4\e45466100558bf1a77b5a9417ab986284e46677b
-k
-;src/main/java/com/revature/utilities/ConnectionUtility.java,1\4\140b2ecbace3435eb3dfcc267ea4519f7b334e7a
-n
->src/main/java/com/revature/exceptions/AppExceptionHandler.java,3\8\3888e703607e24e6e85633ecf673908c035ffb80
-d
-4src/main/java/com/revature/utilities/Encryption.java,8\c\8c48298eb168d3ba1f831de84a7d35f509f2d2c9
-\
-,src/main/java/com/revature/daos/UserDao.java,5\4\54a0dd0f0986c9e91923c6c522e50fa6aa0d3d07
-`
-0src/main/java/com/revature/models/UserRoles.java,f\d\fdd5c0aa2b892db39dcd7d0dc8f73fdff5b4153d
-^
-.src/main/java/com/revature/types/UserRole.java,5\3\5369ac48ec7426f9d727f6173e06438ee817f344
-[
-+src/main/java/com/revature/models/User.java,c\1\c185cfbb3b91f30f1c6d725663f8833dc796c0aa
-j
-:src/main/java/com/revature/controllers/UserController.java,3\3\33768bacf3381e61332680f8bd1e89d9a381ca67
 m
-=src/main/java/com/revature/application/ApplicationDriver.java,9\c\9cf10e091dd8dabc8e1d855f457f53ea7c3e390f
-d
-4src/main/java/com/revature/services/UserService.java,d\2\d2be61aa398606e15331a1cc4aeafeccda405368
+=src/main/java/com/revature/services/ReimbursementService.java,3\1\3175b7492cee939e7842369921bad6ff9c32e269
 j
 :src/main/java/com/revature/daos/UserDaoImplementation.java,5\6\56f654bc758670f49c85191a05da434f231e58ae
 d
 4src/main/java/com/revature/utilities/LogUtility.java,5\6\56e24d214452dab4effb1a1fe87a4d0347d987e8
 n
 >src/main/java/com/revature/application/JavalinApplication.java,1\e\1eaa832c2c577b4cd89db4079091d0c0530a9c21
-=======
->>>>>>> 02013dc8ad70f7240c01b636701d28a8f5815ab2
+m
+=src/main/java/com/revature/application/ApplicationDriver.java,9\c\9cf10e091dd8dabc8e1d855f457f53ea7c3e390f

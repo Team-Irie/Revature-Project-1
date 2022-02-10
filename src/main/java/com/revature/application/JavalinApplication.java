@@ -8,11 +8,10 @@ import com.revature.exceptions.AppExceptionHandler;
 import static io.javalin.apibuilder.ApiBuilder.*;
 
 public class JavalinApplication {
-    final private LogUtility logUtility = new LogUtility();
-    final private UserController userController = new UserController();
-    final private AppExceptionHandler appExceptionHandler = new AppExceptionHandler();
+    private final UserController userController = new UserController();
+    private final AppExceptionHandler appExceptionHandler = new AppExceptionHandler();
 
-    private Javalin app = Javalin.create().routes(() -> {
+    private final Javalin javalin = Javalin.create().routes(() -> {
         path("users", () -> {
             get(userController::handleGetAll);
             post(userController::handleCreate);
@@ -23,9 +22,7 @@ public class JavalinApplication {
                 delete(userController::handleDeleteByID);
             });
         });
-
-        before("*", logUtility::logRequest);
     }).exception(NumberFormatException.class, appExceptionHandler::handleNumberFormatException);
 
-    public void start(int port) { app.start(port); }
+    public void start(int port) { javalin.start(port); }
 }
