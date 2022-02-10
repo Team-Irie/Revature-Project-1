@@ -20,25 +20,22 @@ public class UserController {
     }
 
     public void handleGetByID(Context context){
-        String idParam = context.pathParam("id");
-        int id = Integer.parseInt(idParam);
+        int id = Integer.parseInt(context.pathParam("id"));
         User user = userService.getByID(id);
         context.json(user);
     }
 
     public void handleUpdate(Context context){
         User user = context.bodyAsClass(User.class);
-        int id = Integer.parseInt(context.pathParam("id"));
-        user.setId(id);
 
         if(userService.update(user)){
-            context.status(200);
+            context.status(201);
         } else {
             context.status(400);
         }
     }
 
-    public void handleDeleteByID(Context context) {
-        context.status(405);
+    public void handleDeleteByID(Context context){
+        userService.deleteByID(Integer.parseInt(context.pathParam("id")));
     }
 }
