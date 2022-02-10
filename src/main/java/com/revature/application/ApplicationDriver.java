@@ -22,6 +22,6 @@ public class ApplicationDriver {
         Reimbursement reimbursement = new Reimbursement();
         ReimbursementDaoImplementation reimbursementDaoImplementation = new ReimbursementDaoImplementation();
         System.out.println("this should work");
-        System.out.println(reimbursementDaoImplementation.update(timestamp2, 2, 2, 1));
+        System.out.println(reimbursementDaoImplementation.update(timestamp2, ));
     }
 }
