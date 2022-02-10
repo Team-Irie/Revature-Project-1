@@ -1,5 +1,6 @@
 
-P
-java:S1118":Add a private constructor to hide the implicit public one.(Âş
-[
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(öŞ¼®
+2
+java:S1116
+"Remove this empty statement.(ò²Öª
+v
+java:S1104"[Make consoleAppender a static final constant or non-public and provide accessors if needed.(æ®Ìÿÿÿÿÿ

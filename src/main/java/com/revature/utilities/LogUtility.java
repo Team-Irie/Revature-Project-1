@@ -1,7 +1,14 @@
 package com.revature.utilities;
 
-import org.apache.log4j.Logger;
+import org.apache.log4j.*;
+import io.javalin.http.Context;
 
 public class LogUtility {
-    public final static Logger logger = Logger.getLogger(LogUtility.class);
+    private final Logger logger = Logger.getLogger(this.getClass());
+    public ConsoleAppender consoleAppender = new ConsoleAppender();
+
+    public void logTrace(String message) { logger.trace(message); };
+    public void logRequest(Context context) {
+        logger.info(context.method() + "Request made to: " + context.path());
+    }
 }

@@ -1,5 +1,7 @@
 package com.revature.models;
 
+import com.revature.types.UserRole;
+
 public class User {
     private int id;
     private String username;
@@ -7,12 +9,12 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
-    private int roleID;
+    private UserRole roleID;
 
     public User() {
     }
 
-    public User(String username, String password, String firstName, String lastName, String email, int roleID) {
+    public User(String username, String password, String firstName, String lastName, String email, UserRole roleID) {
         this.username = username;
         this.password = password;
         this.firstName = firstName;
@@ -21,7 +23,7 @@ public class User {
         this.roleID = roleID;
     }
 
-    public User(int id, String username, String password, String firstName, String lastName, String email, int roleID) {
+    public User(int id, String username, String password, String firstName, String lastName, String email, UserRole roleID) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -79,11 +81,11 @@ public class User {
         this.email = email;
     }
 
-    public int getRoleID() {
+    public UserRole getRoleID() {
         return roleID;
     }
 
-    public void setRoleID(int roleID) {
+    public void setRoleID(UserRole roleID) {
         this.roleID = roleID;
     }
 

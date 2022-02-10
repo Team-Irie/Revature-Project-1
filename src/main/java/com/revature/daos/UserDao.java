@@ -8,5 +8,5 @@ public interface UserDao {
     public List<User> getAll();
     public User getByID(int id);
     public boolean update(User user);
-    public boolean delete(User user);
+    public boolean deleteByID(int id);
 }
