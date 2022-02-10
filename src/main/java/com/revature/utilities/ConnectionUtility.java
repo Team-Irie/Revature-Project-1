@@ -17,9 +17,6 @@ public class ConnectionUtility {
         String password = System.getenv("DB_PASSWORD");
 
         String url = "jdbc:postgresql://" + ip + ":5432/postgres";
-        System.out.println(url);
-        System.out.println(userName);
-        System.out.println(password);
 
         return DriverManager.getConnection(url, userName, password);
     }
