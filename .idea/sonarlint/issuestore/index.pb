@@ -9,10 +9,6 @@ d
 4src/main/java/com/revature/utilities/Encryption.java,8\c\8c48298eb168d3ba1f831de84a7d35f509f2d2c9
 \
 ,src/main/java/com/revature/daos/UserDao.java,5\4\54a0dd0f0986c9e91923c6c522e50fa6aa0d3d07
-d
-4src/main/java/com/revature/utilities/LogUtility.java,5\6\56e24d214452dab4effb1a1fe87a4d0347d987e8
-d
-4src/main/java/com/revature/services/UserService.java,d\2\d2be61aa398606e15331a1cc4aeafeccda405368
 `
 0src/main/java/com/revature/models/UserRoles.java,f\d\fdd5c0aa2b892db39dcd7d0dc8f73fdff5b4153d
 ^
@@ -21,9 +17,13 @@ d
 +src/main/java/com/revature/models/User.java,c\1\c185cfbb3b91f30f1c6d725663f8833dc796c0aa
 j
 :src/main/java/com/revature/controllers/UserController.java,3\3\33768bacf3381e61332680f8bd1e89d9a381ca67
+m
+=src/main/java/com/revature/application/ApplicationDriver.java,9\c\9cf10e091dd8dabc8e1d855f457f53ea7c3e390f
+d
+4src/main/java/com/revature/services/UserService.java,d\2\d2be61aa398606e15331a1cc4aeafeccda405368
+d
+4src/main/java/com/revature/utilities/LogUtility.java,5\6\56e24d214452dab4effb1a1fe87a4d0347d987e8
 n
 >src/main/java/com/revature/application/JavalinApplication.java,1\e\1eaa832c2c577b4cd89db4079091d0c0530a9c21
 j
 :src/main/java/com/revature/daos/UserDaoImplementation.java,5\6\56f654bc758670f49c85191a05da434f231e58ae
-m
-=src/main/java/com/revature/application/ApplicationDriver.java,9\c\9cf10e091dd8dabc8e1d855f457f53ea7c3e390f
