@@ -1,10 +1,8 @@
 package com.revature.daos;
 
 import java.sql.*;
-
 import java.util.List;
 import java.util.ArrayList;
-
 import com.revature.models.User;
 import com.revature.types.UserRole;
 import com.revature.utilities.LogUtility;
@@ -24,11 +22,10 @@ public class UserDaoImplementation implements UserDao {
             preparedStatement.setString(5, user.getEmail());
             preparedStatement.setInt(6, user.getRoleID().ordinal());
 
-            if(preparedStatement.executeUpdate() == 1) {
-                return true;
-            }
+            if(preparedStatement.executeUpdate() == 1) { return true; }
 
         } catch (SQLException e){
+            LogUtility.logger.error("UserDaoImplementation.create failed");
             e.printStackTrace();
         }
 
@@ -57,7 +54,9 @@ public class UserDaoImplementation implements UserDao {
 
                 users.add(user);
             }
+
         } catch (SQLException e) {
+            LogUtility.logger.error("UserDaoImplementation.getAll failed");
             e.printStackTrace();
         }
 
@@ -88,6 +87,7 @@ public class UserDaoImplementation implements UserDao {
                 return user;
             }
         } catch (SQLException e){
+            LogUtility.logger.error("UserDaoImplementation.getByID failed");
             e.printStackTrace();
         }
 
@@ -112,6 +112,7 @@ public class UserDaoImplementation implements UserDao {
             if(preparedStatement.executeUpdate() == 1) { return true; }
 
         } catch (SQLException e) {
+            LogUtility.logger.error("UserDaoImplementation.update failed");
             e.printStackTrace();
         }
 
@@ -128,6 +129,7 @@ public class UserDaoImplementation implements UserDao {
             if(preparedStatement.executeUpdate() == 1) { return true; }
 
         } catch (SQLException e) {
+            LogUtility.logger.error("UserDaoImplementation.deleteByID failed");
             e.printStackTrace();
         }
 
