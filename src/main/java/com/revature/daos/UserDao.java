@@ -7,6 +7,7 @@ public interface UserDao {
     public boolean create(User user);
     public List<User> getAll();
     public User getByID(int id);
+    public User getByEmailAndPassword(String username, String password);
     public boolean update(User user);
     public boolean deleteByID(int id);
 }

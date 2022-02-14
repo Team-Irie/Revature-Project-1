@@ -7,6 +7,8 @@ import com.revature.daos.UserDao;
 public class UserService {
     private UserDao userDao;
 
+    public UserService() {}
+
     public UserService(UserDao userDao){
         this.userDao = userDao;
     }
@@ -22,4 +24,6 @@ public class UserService {
     }
 
     public boolean deleteByID(int id) { return userDao.deleteByID(id); }
+
+    public User getByEmailAndPassword(String email, String password) { return userDao.getByEmailAndPassword(email, password); }
 }

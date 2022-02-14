@@ -1,5 +1,6 @@
 package com.revature.application;
 
+import com.revature.controllers.AuthenticationController;
 import com.revature.daos.UserDao;
 import com.revature.daos.UserDaoImplementation;
 import com.revature.services.UserService;
@@ -14,6 +15,7 @@ public class JavalinApplication {
     private final UserService userService = new UserService(userDao);
     private final UserController userController = new UserController(userService);
     private final AppExceptionHandler appExceptionHandler = new AppExceptionHandler();
+    private final AuthenticationController authenticationController = new AuthenticationController();
 
     private final Javalin javalin = Javalin.create().routes(() -> {
         path("users", () -> {
@@ -26,6 +28,14 @@ public class JavalinApplication {
                 delete(userController::handleDeleteByID);
             });
         });
+            path("Reimbursement", ()->{
+                before(authenticationController::authorizeManagerToken);
+                get("{id}", authenticationController::authenticateLogin);
+            });
+
+            path("login", ()->{
+                post(authenticationController::authenticateLogin);
+            });
     }).exception(NumberFormatException.class, appExceptionHandler::handleNumberFormatException);
 
     public void start(int port) { javalin.start(port); }
