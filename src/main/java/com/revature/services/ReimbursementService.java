@@ -3,21 +3,28 @@ package com.revature.services;
 import java.sql.Timestamp;
 import java.util.List;
 
+import com.revature.daos.UserDao;
 import com.revature.models.Reimbursement;
 import com.revature.daos.ReimbursementDao;
 import com.revature.daos.ReimbursementDaoImplementation;
 
 public class ReimbursementService {
-    private final ReimbursementDao reimbursementDao = new ReimbursementDaoImplementation();
+    private ReimbursementDao reimbursementDao;
+
+    public ReimbursementService() {}
+
+    public ReimbursementService(ReimbursementDao reimbursementDao){
+        this.reimbursementDao = reimbursementDao;
+    }
 
     public boolean create(Reimbursement reimbursement) { return reimbursementDao.create(reimbursement); }
 
-    public List<Reimbursement> readByAuthorAndStatusId(int author, int status_id) { return reimbursementDao.readByAuthorAndStatusId(author, status_id); }
+    public List<Reimbursement> getByAuthorAndStatusId(int author, int statusID) { return reimbursementDao.getByAuthorAndStatusId(author, statusID); }
 
-    public boolean update(Timestamp timestamp, int author, int resolver, int status_id) { return reimbursementDao.update(timestamp, author, resolver, status_id); }
+    public boolean update(Timestamp timestamp, int author, int resolver, int statusID) { return reimbursementDao.update(timestamp, author, resolver, statusID); }
 
-    public List<Reimbursement> readByStatusId(int status_id) { return reimbursementDao.readByStatusId(status_id ); }
+    public List<Reimbursement> getByStatusId(int statusID) { return reimbursementDao.getByStatusId(statusID ); }
 
-    public List<Reimbursement> readByAuthor(int author) { return reimbursementDao.readByAuthor(author); }
+    public List<Reimbursement> getByAuthor(int author) { return reimbursementDao.getByAuthor(author); }
 }
 

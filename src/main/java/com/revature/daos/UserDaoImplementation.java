@@ -95,6 +95,40 @@ public class UserDaoImplementation implements UserDao {
     }
 
     @Override
+    public User getByEmailAndPassword(String email, String password) {
+        String sql = "select * from users where email = ? and password = ?";
+
+        try(Connection connection = ConnectionUtility.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()) {
+                User user = new User();
+
+                int roleId = resultSet.getInt("role_id");
+                UserRole[] userRoles = UserRole.values();
+
+                user.setId(resultSet.getInt("id"));
+                user.setPassword(resultSet.getString("username"));
+                user.setPassword(resultSet.getString("password"));
+                user.setFirstName(resultSet.getString("first_name"));
+                user.setLastName(resultSet.getString("last_name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setRoleID(userRoles[roleId]);
+
+                return user;
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    @Override
     public boolean update(User user) {
         String sql = "update users set username = ?, password = ?, first_name = ?, last_name = ?, email = ?, role_id = ? where id = ?";
 

@@ -38,7 +38,7 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
     //View pending reimbursement requests
     //View resolved reimbursement requests
     @Override
-    public List<Reimbursement> readByAuthorAndStatusId(int author, int status_id) {
+    public List<Reimbursement> getByAuthorAndStatusId(int author, int statusID) {
         List<Reimbursement> reimbursements = new ArrayList<>();
 
         String sql = "select * from reimbursement where author = ? and status_id = ?";
@@ -47,7 +47,7 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
              PreparedStatement ps = connection.prepareStatement(sql)) {
             Reimbursement reimbursement = new Reimbursement();
             ps.setInt(1, author);
-            ps.setInt(2, status_id);
+            ps.setInt(2, statusID);
             ResultSet resultSet = ps.executeQuery();
 
             while(resultSet.next()) {
@@ -72,14 +72,14 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
 
     //Approve/Deny pending reimbursement requests
     @Override
-    public boolean update(Timestamp timestamp, int resolver, int status_id, int author) {
+    public boolean update(Timestamp timestamp, int resolver, int statusID, int author) {
         String sql = "update reimbursement set resolved = ?, resolver = ?, status_id = ? where author = ?";
 
         try (Connection connection = ConnectionUtility.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setTimestamp(1, timestamp);
             ps.setInt(2, resolver);
-            ps.setInt(3, status_id);
+            ps.setInt(3, statusID);
             ps.setInt(4, author);
             if(ps.executeUpdate() == 1) {
                 return true;
@@ -93,7 +93,7 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
     //View all pending requests of all employees
     //View all resolved requests of all employees
     @Override
-    public List<Reimbursement> readByStatusId(int status_id) {
+    public List<Reimbursement> getByStatusId(int statusID) {
         String sql = "select * from reimbursement where status_id = ?";
         Reimbursement reimbursement = new Reimbursement();
         List<Reimbursement> reimbursements = new ArrayList<>();
@@ -101,7 +101,7 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
         try (Connection connection = ConnectionUtility.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
 
-            ps.setInt(1, status_id);
+            ps.setInt(1, statusID);
             ResultSet resultSet = ps.executeQuery();
 
             while(resultSet.next()) {
@@ -126,7 +126,7 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
 
     //View reimbursement requests of a specific employee
     @Override
-    public List<Reimbursement> readByAuthor(int statusID) {
+    public List<Reimbursement> getByAuthor(int statusID) {
         String sql = "select * from reimbursement where author = ?";
         Reimbursement reimbursement = new Reimbursement();
         List<Reimbursement> reimbursements = new ArrayList<>();
@@ -146,8 +146,8 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
                 reimbursement.setReceipt(resultSet.getBytes("receipt"));
                 reimbursement.setAuthor(resultSet.getByte("author"));
                 reimbursement.setResolver(resultSet.getInt("resolver"));
-                reimbursement.setStatusID(resultSet.getInt("statusID"));
-                reimbursement.setTypeID((resultSet.getInt("typeID")));
+                reimbursement.setStatusID(resultSet.getInt("status_id"));
+                reimbursement.setTypeID((resultSet.getInt("type_id")));
                 reimbursements.add(reimbursement);
             }
         } catch (SQLException e) {
@@ -156,5 +156,4 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
 
         return reimbursements;
     }
-
 }
