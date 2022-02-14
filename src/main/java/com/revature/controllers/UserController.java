@@ -3,9 +3,15 @@ package com.revature.controllers;
 import io.javalin.http.Context;
 import com.revature.models.User;
 import com.revature.services.UserService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class UserController {
-    private UserService userService = new UserService();
+    private UserService userService;
+    private ObjectMapper mapper = new ObjectMapper();
+
+    public UserController(UserService userService){
+        this.userService = userService;
+    }
 
     public void handleCreate(Context context) {
         if(userService.create(context.bodyAsClass(User.class))) {

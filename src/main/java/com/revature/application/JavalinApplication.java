@@ -1,5 +1,8 @@
 package com.revature.application;
 
+import com.revature.daos.UserDao;
+import com.revature.daos.UserDaoImplementation;
+import com.revature.services.UserService;
 import io.javalin.Javalin;
 import com.revature.controllers.UserController;
 import com.revature.exceptions.AppExceptionHandler;
@@ -7,7 +10,9 @@ import com.revature.exceptions.AppExceptionHandler;
 import static io.javalin.apibuilder.ApiBuilder.*;
 
 public class JavalinApplication {
-    private final UserController userController = new UserController();
+    private final UserDao userDao = new UserDaoImplementation();
+    private final UserService userService = new UserService(userDao);
+    private final UserController userController = new UserController(userService);
     private final AppExceptionHandler appExceptionHandler = new AppExceptionHandler();
 
     private final Javalin javalin = Javalin.create().routes(() -> {
