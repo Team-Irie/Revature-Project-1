@@ -1,0 +1,13 @@
+2022-02-11 18:41:40 ERROR LogUtility:59 - UserDaoImplementation.getAll failed
+2022-02-12 10:33:12 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-12 10:34:04 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-12 10:34:26 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-12 10:38:39 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-12 10:39:58 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-12 10:54:55 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-12 10:55:23 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-12 11:01:22 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-12 11:01:45 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-12 11:14:23 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-12 11:16:05 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-12 11:16:22 ERROR LogUtility:115 - UserDaoImplementation.update failed

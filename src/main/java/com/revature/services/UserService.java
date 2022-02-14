@@ -2,20 +2,24 @@ package com.revature.services;
 
 import java.util.List;
 import com.revature.models.User;
-import com.revature.daos.UserDaoImplementation;
+import com.revature.daos.UserDao;
 
 public class UserService {
-    private final UserDaoImplementation userDaoImplementation = new UserDaoImplementation();
+    private UserDao userDao;
 
-    public boolean create(User user) { return userDaoImplementation.create(user); }
-
-    public List<User> getAll() { return userDaoImplementation.getAll(); }
-
-    public User getByID(int id) { return userDaoImplementation.getByID(id); }
-
-    public boolean update(User user) {
-        return userDaoImplementation.update(user);
+    public UserService(UserDao userDao){
+        this.userDao = userDao;
     }
 
-    public boolean deleteByID(int id) { return userDaoImplementation.deleteByID(id); }
+    public boolean create(User user) { return userDao.create(user); }
+
+    public List<User> getAll() { return userDao.getAll(); }
+
+    public User getByID(int id) { return userDao.getByID(id); }
+
+    public boolean update(User user) {
+        return userDao.update(user);
+    }
+
+    public boolean deleteByID(int id) { return userDao.deleteByID(id); }
 }
