@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import com.revature.models.Reimbursement;
 import com.revature.utilities.ConnectionUtility;
+import com.revature.utilities.LogUtility;
 
 public class ReimbursementDaoImplementation implements ReimbursementDao {
     //Submit a reimbursement request
@@ -33,6 +34,38 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
             e.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public List<Reimbursement> getAll() {
+        String sql = "select * from reimbursement";
+        List<Reimbursement> reimbursements = new ArrayList<>();
+
+        try (Connection connection = ConnectionUtility.getConnection(); Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while(resultSet.next()) {
+                Reimbursement reimbursement = new Reimbursement();
+
+                reimbursement.setId(resultSet.getInt("id"));
+                reimbursement.setAmount(resultSet.getInt("amount"));
+                reimbursement.setSubmitted(resultSet.getTimestamp("submitted"));
+                reimbursement.setResolved(resultSet.getTimestamp("resolved"));
+                reimbursement.setDescription(resultSet.getString("description"));
+                reimbursement.setReceipt(resultSet.getBytes("receipt"));
+                reimbursement.setAuthor(resultSet.getByte("author"));
+                reimbursement.setResolver(resultSet.getInt("resolver"));
+                reimbursement.setStatusID(resultSet.getInt("status_id"));
+                reimbursement.setTypeID((resultSet.getInt("type_id")));
+
+                reimbursements.add(reimbursement);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return reimbursements;
     }
 
     //View pending reimbursement requests

@@ -35,3 +35,7 @@ create table reimbursement (
 	status_id int,
 	type_id int
 );
+
+select * from reimbursement;
+
+insert into reimbursement (amount, submitted, resolved, description, receipt, author, resolver, status_id, type_id) values (200,'2017-03-31 9:30:20','2017-03-31 9:30:20','Money','',0,0,0,0);

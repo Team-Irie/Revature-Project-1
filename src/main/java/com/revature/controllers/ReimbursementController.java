@@ -23,7 +23,11 @@ public class ReimbursementController {
         }
     }
 
-    public void getByAuthorAndStatusId(Context context) {
+    public void handleGetAll(Context context) {
+        context.json(reimbursementService.getAll());
+    }
+
+    public void handleGetByAuthorAndStatusId(Context context) {
         context.json(reimbursementService.getByAuthorAndStatusId(Integer.parseInt(context.pathParam("author")), Integer.parseInt(context.pathParam("status_id"))));
     }
 }

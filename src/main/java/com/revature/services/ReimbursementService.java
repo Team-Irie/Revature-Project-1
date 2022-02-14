@@ -3,7 +3,6 @@ package com.revature.services;
 import java.sql.Timestamp;
 import java.util.List;
 
-import com.revature.daos.UserDao;
 import com.revature.models.Reimbursement;
 import com.revature.daos.ReimbursementDao;
 import com.revature.daos.ReimbursementDaoImplementation;
@@ -18,6 +17,8 @@ public class ReimbursementService {
     }
 
     public boolean create(Reimbursement reimbursement) { return reimbursementDao.create(reimbursement); }
+
+    public List<Reimbursement> getAll() { return reimbursementDao.getAll(); }
 
     public List<Reimbursement> getByAuthorAndStatusId(int author, int statusID) { return reimbursementDao.getByAuthorAndStatusId(author, statusID); }
 
