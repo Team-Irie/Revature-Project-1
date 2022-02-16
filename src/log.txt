@@ -52,3 +52,9 @@
 2022-02-16 15:09:36 INFO  LogUtility:10 - POST request made to: /login
 2022-02-16 15:10:07 INFO  LogUtility:10 - POST request made to: /login
 2022-02-16 15:12:52 INFO  LogUtility:10 - GET request made to: /users
+2022-02-16 15:17:24 INFO  LogUtility:10 - GET request made to: /users
+2022-02-16 15:21:56 INFO  LogUtility:10 - GET request made to: /users
+2022-02-16 15:22:15 INFO  LogUtility:10 - GET request made to: /reimbursements
+2022-02-16 15:25:01 INFO  LogUtility:10 - POST request made to: /reimbursements
+2022-02-16 15:25:07 INFO  LogUtility:10 - GET request made to: /reimbursements
+2022-02-16 15:27:34 INFO  LogUtility:10 - POST request made to: /login/bossemail/password

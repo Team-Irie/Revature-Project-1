@@ -21,8 +21,6 @@ s
 Csrc/main/java/com/revature/daos/ReimbursementDaoImplementation.java,e\4\e45466100558bf1a77b5a9417ab986284e46677b
 \
 ,src/main/java/com/revature/daos/UserDao.java,5\4\54a0dd0f0986c9e91923c6c522e50fa6aa0d3d07
-n
->src/main/java/com/revature/application/JavalinApplication.java,1\e\1eaa832c2c577b4cd89db4079091d0c0530a9c21
 d
 4src/main/java/com/revature/services/UserService.java,d\2\d2be61aa398606e15331a1cc4aeafeccda405368
 m
@@ -31,3 +29,5 @@ j
 :src/main/java/com/revature/daos/UserDaoImplementation.java,5\6\56f654bc758670f49c85191a05da434f231e58ae
 t
 Dsrc/main/java/com/revature/controllers/AuthenticationController.java,c\d\cdfd00e10c49a611c2bd54a374e2460ec7ef1bda
+n
+>src/main/java/com/revature/application/JavalinApplication.java,1\e\1eaa832c2c577b4cd89db4079091d0c0530a9c21

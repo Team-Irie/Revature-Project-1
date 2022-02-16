@@ -51,7 +51,6 @@ public class JavalinApplication {
         });
 
         path("login", ()-> {
-            System.out.println("Login Called");
             post(authenticationController::authenticateLogin);
         });
 

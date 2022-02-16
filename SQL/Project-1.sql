@@ -1,10 +1,10 @@
 create table users (
 	id serial not null,
-	username varchar(50),
+	username varchar(50) unique,
 	"password" varchar(50),
 	first_name varchar(100),
 	last_name varchar(100),
-	email varchar(150),
+	email varchar(150) unique,
 	role_id int
 );
 
@@ -35,17 +35,3 @@ create table reimbursement (
 	status_id int,
 	type_id int
 );
-
-drop table reimbursement;
-
-select * from users;
-
-select * from users where email = 'email' and password = 'password';
-
-insert into users (username, password, first_name, last_name, email, role_id) values ('username', 'password', 'first_name', 'last_name', 'email', 0);
-
-select * from reimbursement;
-
-delete from reimbursement where id = 1;
-
-insert into reimbursement (amount, submitted, resolved, description, receipt, author, resolver, status_id, type_id) values (200,'2017-03-31 9:30:20','2017-03-31 9:30:20','Money','',0,0,0,0);
