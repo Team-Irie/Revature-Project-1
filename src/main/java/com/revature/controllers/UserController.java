@@ -3,11 +3,9 @@ package com.revature.controllers;
 import io.javalin.http.Context;
 import com.revature.models.User;
 import com.revature.services.UserService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class UserController {
-    private UserService userService;
-    private ObjectMapper mapper = new ObjectMapper();
+    private final UserService userService;
 
     public UserController(UserService userService){
         this.userService = userService;
@@ -27,10 +25,6 @@ public class UserController {
 
     public void handleGetByID(Context context) {
         context.json(userService.getByID(Integer.parseInt(context.pathParam("id"))));
-    }
-
-    public void handleGetByEmailAndPassword(Context context) {
-        userService.getByEmailAndPassword(context.pathParam("email"), context.pathParam("password"));
     }
 
     public void handleUpdate(Context context) {

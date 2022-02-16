@@ -35,7 +35,7 @@ public class UserDaoImplementation implements UserDao {
     @Override
     public List<User> getAll() {
         String sql = "select * from users";
-        UserRole[] user_roles = UserRole.values();
+        UserRole[] userRoles = UserRole.values();
         List<User> users = new ArrayList<>();
 
         try (Connection connection = ConnectionUtility.getConnection(); Statement statement = connection.createStatement()) {
@@ -50,7 +50,7 @@ public class UserDaoImplementation implements UserDao {
                 user.setFirstName(resultSet.getString("first_name"));
                 user.setLastName(resultSet.getString("last_name"));
                 user.setEmail(resultSet.getString("email"));
-                user.setRoleID(user_roles[resultSet.getInt("role_id")]);
+                user.setRoleID(userRoles[resultSet.getInt("role_id")]);
 
                 users.add(user);
             }
@@ -66,7 +66,7 @@ public class UserDaoImplementation implements UserDao {
     @Override
     public User getByID(int id) {
         String sql = "select * from users where id = ?";
-        UserRole[] user_roles = UserRole.values();
+        UserRole[] userRoles = UserRole.values();
 
         try (Connection connection = ConnectionUtility.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
@@ -82,7 +82,7 @@ public class UserDaoImplementation implements UserDao {
                 user.setFirstName(resultSet.getString("first_name"));
                 user.setLastName(resultSet.getString("last_name"));
                 user.setEmail(resultSet.getString("email"));
-                user.setRoleID(user_roles[resultSet.getInt("role_id")]);
+                user.setRoleID(userRoles[resultSet.getInt("role_id")]);
 
                 return user;
             }
@@ -97,9 +97,9 @@ public class UserDaoImplementation implements UserDao {
     @Override
     public User getByEmailAndPassword(String email, String password) {
         String sql = "select * from users where email = ? and password = ?";
+        UserRole[] userRoles = UserRole.values();
 
-        try(Connection connection = ConnectionUtility.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try (Connection connection = ConnectionUtility.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
@@ -108,20 +108,18 @@ public class UserDaoImplementation implements UserDao {
             if(resultSet.next()) {
                 User user = new User();
 
-                int roleId = resultSet.getInt("role_id");
-                UserRole[] userRoles = UserRole.values();
-
                 user.setId(resultSet.getInt("id"));
-                user.setPassword(resultSet.getString("username"));
+                user.setUsername(resultSet.getString("username"));
                 user.setPassword(resultSet.getString("password"));
                 user.setFirstName(resultSet.getString("first_name"));
                 user.setLastName(resultSet.getString("last_name"));
                 user.setEmail(resultSet.getString("email"));
-                user.setRoleID(userRoles[roleId]);
+                user.setRoleID(userRoles[resultSet.getInt("role_id")]);
 
                 return user;
             }
         } catch (SQLException e){
+            LogUtility.logger.error("UserDaoImplementation.getByEmailAndPassword failed");
             e.printStackTrace();
         }
 

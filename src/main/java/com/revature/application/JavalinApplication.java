@@ -1,5 +1,6 @@
 package com.revature.application;
 
+import com.revature.utilities.LogUtility;
 import com.revature.controllers.AuthenticationController;
 import com.revature.controllers.ReimbursementController;
 import com.revature.daos.ReimbursementDao;
@@ -39,17 +40,22 @@ public class JavalinApplication {
             });
         });
 
-        path("reimbursements", ()->{
-            //post(reimbursementController::handleCreate);
+        path("reimbursements", ()-> {
+            before(authenticationController::authorizeManagerToken);
+            put(reimbursementController::handleUpdate);
             get(reimbursementController::handleGetAll);
-            //get(reimbursementController::handleGetByAuthorAndStatusId);
-            //before(authenticationController::authorizeManagerToken);
-            //get("{id}", authenticationController::authenticateLogin);
+            post(reimbursementController::handleCreate);
+            //get("{author}", reimbursementController::handleGetByAuthor);
+            //get("{status_id}", reimbursementController::handleGetByStatusId);
+            //get("{id}", reimbursementController::handleGetByAuthorAndStatusId);
         });
 
-        path("login", ()->{
+        path("login", ()-> {
+            System.out.println("Login Called");
             post(authenticationController::authenticateLogin);
         });
+
+        before("*", LogUtility::logRequest);
     }).exception(NumberFormatException.class, appExceptionHandler::handleNumberFormatException);
 
     public void start(int port) { javalin.start(port); }

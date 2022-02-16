@@ -11,3 +11,44 @@
 2022-02-12 11:14:23 ERROR LogUtility:115 - UserDaoImplementation.update failed
 2022-02-12 11:16:05 ERROR LogUtility:115 - UserDaoImplementation.update failed
 2022-02-12 11:16:22 ERROR LogUtility:115 - UserDaoImplementation.update failed
+2022-02-15 15:30:48 INFO  LogUtility:10 - GET request made to: /users
+2022-02-15 15:34:10 INFO  LogUtility:10 - POST request made to: /users
+2022-02-15 15:34:36 INFO  LogUtility:10 - POST request made to: /users/%22boss%22/%22password%22
+2022-02-15 15:34:46 INFO  LogUtility:10 - POST request made to: /users/boss/password
+2022-02-15 15:40:27 INFO  LogUtility:10 - GET request made to: /users
+2022-02-15 15:40:57 INFO  LogUtility:10 - POST request made to: /users/login
+2022-02-15 15:42:46 INFO  LogUtility:10 - GET request made to: /users
+2022-02-15 15:43:08 INFO  LogUtility:10 - POST request made to: /users/login
+2022-02-15 15:47:26 INFO  LogUtility:10 - POST request made to: /users/login
+2022-02-15 15:48:06 INFO  LogUtility:10 - POST request made to: /users/login
+2022-02-16 07:37:32 INFO  LogUtility:10 - GET request made to: /users
+2022-02-16 07:38:45 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 07:40:05 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 07:40:13 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 07:43:26 INFO  LogUtility:10 - GET request made to: /users
+2022-02-16 07:45:22 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 07:50:41 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 07:50:50 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 07:51:37 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 07:51:47 INFO  LogUtility:10 - GET request made to: /users
+2022-02-16 07:52:34 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 14:43:34 INFO  LogUtility:10 - GET request made to: /users
+2022-02-16 14:45:09 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 14:47:32 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 14:49:52 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 14:53:52 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 14:55:02 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 14:56:20 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 14:56:55 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 14:57:33 INFO  LogUtility:10 - GET request made to: /user/9
+2022-02-16 14:57:36 INFO  LogUtility:10 - GET request made to: /user
+2022-02-16 14:57:58 INFO  LogUtility:10 - GET request made to: /user
+2022-02-16 14:58:44 INFO  LogUtility:10 - GET request made to: /users
+2022-02-16 14:58:54 INFO  LogUtility:10 - GET request made to: /users/9
+2022-02-16 15:04:55 INFO  LogUtility:10 - GET request made to: /login
+2022-02-16 15:06:05 INFO  LogUtility:10 - GET request made to: /login
+2022-02-16 15:06:12 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 15:06:17 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 15:09:36 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 15:10:07 INFO  LogUtility:10 - POST request made to: /login
+2022-02-16 15:12:52 INFO  LogUtility:10 - GET request made to: /users

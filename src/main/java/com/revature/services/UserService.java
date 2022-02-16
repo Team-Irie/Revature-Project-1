@@ -19,11 +19,11 @@ public class UserService {
 
     public User getByID(int id) { return userDao.getByID(id); }
 
+    public User getByEmailAndPassword(String email, String password) { return userDao.getByEmailAndPassword(email, password); }
+
     public boolean update(User user) {
         return userDao.update(user);
     }
 
     public boolean deleteByID(int id) { return userDao.deleteByID(id); }
-
-    public User getByEmailAndPassword(String email, String password) { return userDao.getByEmailAndPassword(email, password); }
 }

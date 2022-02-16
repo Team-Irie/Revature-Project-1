@@ -10,30 +10,31 @@ public class AuthenticationController {
 
     private final UserService userService = new UserService();
 
-    public void authenticateLogin(Context context){
-        String username = context.formParam("username");
+    public void authenticateLogin(Context context) {
+        String email = context.formParam("email");
         String password = context.formParam("password");
 
-        User user = userService.getByEmailAndPassword(username, password);
+        User user = userService.getByEmailAndPassword(email, password);
 
         if(user == null) {
             throw new UnauthorizedResponse("Incorrect credentials");
         } else {
-            String simpleToken = user.getRoleID()+"-TOKEN";
-            context.header("Authorization", simpleToken);
+            String token = user.getRoleID() + "-TOKEN";
+            context.header("Authorization", token);
             context.status(200);
         }
     }
 
     public void authorizeManagerToken(Context context) {
-        String authHeader = context.header("Authorization");
-        if(authHeader != null){
-            if(authHeader.equals("MANAGER-TOKEN")) {
+        String header = context.header("Authorization");
+
+        if(header != null){
+            if(header.equals("MANAGER-TOKEN")) {
                 return;
-            } else if (authHeader.equals("EMPLOYEE-TOKEN")) {
-                throw new ForbiddenResponse("students are unable to access this feature");
+            } else if (header.equals("EMPLOYEE-TOKEN")) {
+                throw new ForbiddenResponse("Employees are unable to access this feature");
             }
         }
-        throw new UnauthorizedResponse("please login and try again");
+        throw new UnauthorizedResponse("Please try to login again");
     }
 }

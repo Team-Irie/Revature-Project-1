@@ -1,7 +1,3 @@
 
-I
-java:S1602*",Remove useless curly braces around statement(ÌØ«Å8š§šÓï/
-X	java:S125+"<This block of commented-out lines of code should be removed.(ÈË’8Ò¤›Óï/
-]	java:S125-"<This block of commented-out lines of code should be removed.(©“ÍÈûÿÿÿÿ8ü‡›Óï/
-N
-java:S16022",Remove useless curly braces around statement(Å‚¦ùøÿÿÿÿ8Ò¤›Óï/
+X	java:S1250"<This block of commented-out lines of code should be removed.(ïöŠü8­à¬üï/
+U	java:S1066"9Replace this use of System.out or System.err by a logger.(¥˜ÄÎ8€ÀŸ¤ğ/

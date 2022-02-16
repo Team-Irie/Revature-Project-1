@@ -7,26 +7,24 @@ import java.util.ArrayList;
 
 import com.revature.models.Reimbursement;
 import com.revature.utilities.ConnectionUtility;
-import com.revature.utilities.LogUtility;
 
 public class ReimbursementDaoImplementation implements ReimbursementDao {
     //Submit a reimbursement request
     @Override
     public boolean create(Reimbursement reimbursement) {
-        String sql = "insert into reimbursement (id, amount, submitted, resolved, description, receipt, author, resolver, status_id, type_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "insert into reimbursement (amount, submitted, resolved, description, receipt, author, resolver, status_id, type_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = ConnectionUtility.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
-                ps.setInt(1, reimbursement.getId());
-                ps.setInt(2, reimbursement.getAmount());
-                ps.setTimestamp(3, reimbursement.getSubmitted());
-                ps.setTimestamp(4, reimbursement.getResolved());
-                ps.setString(5, reimbursement.getDescription());
-                ps.setBytes(6, reimbursement.getReceipt());
-                ps.setInt(7, reimbursement.getAuthor());
-                ps.setInt(8, reimbursement.getResolver());
-                ps.setInt(9, reimbursement.getStatusID());
-                ps.setInt(10, reimbursement.getTypeID());
+                ps.setInt(1, reimbursement.getAmount());
+                ps.setTimestamp(2, reimbursement.getSubmitted());
+                ps.setTimestamp(3, reimbursement.getResolved());
+                ps.setString(4, reimbursement.getDescription());
+                ps.setBytes(5, reimbursement.getReceipt());
+                ps.setInt(6, reimbursement.getAuthor());
+                ps.setInt(7, reimbursement.getResolver());
+                ps.setInt(8, reimbursement.getStatusID());
+                ps.setInt(9, reimbursement.getTypeID());
             if(ps.executeUpdate() == 1) {
                 return true;
             }
@@ -159,7 +157,7 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
 
     //View reimbursement requests of a specific employee
     @Override
-    public List<Reimbursement> getByAuthor(int statusID) {
+    public List<Reimbursement> getByAuthor(int author) {
         String sql = "select * from reimbursement where author = ?";
         Reimbursement reimbursement = new Reimbursement();
         List<Reimbursement> reimbursements = new ArrayList<>();
@@ -167,7 +165,7 @@ public class ReimbursementDaoImplementation implements ReimbursementDao {
         try (Connection connection = ConnectionUtility.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
 
-            ps.setInt(1, reimbursement.getAuthor());
+            ps.setInt(1, author);
             ResultSet resultSet = ps.executeQuery(sql);
 
             while(resultSet.next()) {
