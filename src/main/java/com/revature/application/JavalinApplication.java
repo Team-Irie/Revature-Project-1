@@ -41,17 +41,15 @@ public class JavalinApplication {
         });
 
         path("reimbursements", ()-> {
-            before(authenticationController::authorizeManagerToken);
+            before(authenticationController::handleAuthorizeManagerToken);
             put(reimbursementController::handleUpdate);
             get(reimbursementController::handleGetAll);
             post(reimbursementController::handleCreate);
-            //get("{author}", reimbursementController::handleGetByAuthor);
-            //get("{status_id}", reimbursementController::handleGetByStatusId);
-            //get("{id}", reimbursementController::handleGetByAuthorAndStatusId);
         });
 
         path("login", ()-> {
-            post(authenticationController::authenticateLogin);
+            get(userController::handleGetByEmailAndPassword);
+            post(authenticationController::handleAuthenticateLogin);
         });
 
         before("*", LogUtility::logRequest);

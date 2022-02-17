@@ -97,16 +97,17 @@ public class UserDaoImplementation implements UserDao {
     @Override
     public User getByEmailAndPassword(String email, String password) {
         String sql = "select * from users where email = ? and password = ?";
-        UserRole[] userRoles = UserRole.values();
-
         try (Connection connection = ConnectionUtility.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
+
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
                 User user = new User();
+
+                UserRole[] userRoles = UserRole.values();
 
                 user.setId(resultSet.getInt("id"));
                 user.setUsername(resultSet.getString("username"));
@@ -118,8 +119,7 @@ public class UserDaoImplementation implements UserDao {
 
                 return user;
             }
-        } catch (SQLException e){
-            LogUtility.logger.error("UserDaoImplementation.getByEmailAndPassword failed");
+        } catch(SQLException e) {
             e.printStackTrace();
         }
 
