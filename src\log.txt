@@ -1,0 +1,30 @@
+2022-02-17 10:30:54 INFO  LogUtility:10 - GET request made to: /reimbursements
+2022-02-17 10:31:25 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 10:31:37 ERROR LogUtility:59 - UserDaoImplementation.getAll failed
+2022-02-17 12:27:17 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 12:27:50 INFO  LogUtility:10 - GET request made to: /reimbursements
+2022-02-17 12:37:53 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 12:38:58 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 12:42:59 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 12:50:23 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 12:50:47 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 12:54:49 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 12:55:04 INFO  LogUtility:10 - GET request made to: /reimbursements
+2022-02-17 13:04:50 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 13:04:52 ERROR LogUtility:59 - UserDaoImplementation.getAll failed
+2022-02-17 13:05:52 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 13:05:53 ERROR LogUtility:59 - UserDaoImplementation.getAll failed
+2022-02-17 13:07:34 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 13:07:35 ERROR LogUtility:59 - UserDaoImplementation.getAll failed
+2022-02-17 13:08:36 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 13:09:55 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 13:09:56 ERROR LogUtility:59 - UserDaoImplementation.getAll failed
+2022-02-17 13:15:45 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 13:25:41 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 13:32:00 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 13:41:54 INFO  LogUtility:10 - GET request made to: /
+2022-02-17 13:41:56 INFO  LogUtility:10 - GET request made to: /favicon.ico
+2022-02-17 13:42:01 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 16:11:39 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 16:15:16 INFO  LogUtility:10 - GET request made to: /users
+2022-02-17 16:15:48 INFO  LogUtility:10 - GET request made to: /reimbursements
