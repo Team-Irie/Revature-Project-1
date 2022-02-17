@@ -27,6 +27,10 @@ public class UserController {
         context.json(userService.getByID(Integer.parseInt(context.pathParam("id"))));
     }
 
+    public void handleGetByEmailAndPassword(Context context) {
+        context.json(userService.getByEmailAndPassword(context.formParam("email"), context.formParam("password")));
+    }
+
     public void handleUpdate(Context context) {
         User user = context.bodyAsClass(User.class);
         user.setId(Integer.parseInt(context.pathParam("id")));

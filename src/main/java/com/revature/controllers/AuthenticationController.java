@@ -7,16 +7,11 @@ import io.javalin.http.ForbiddenResponse;
 import io.javalin.http.UnauthorizedResponse;
 
 public class AuthenticationController {
+    public void handleAuthenticateLogin(Context context) {
+        UserService userService = new UserService();
+        User user = userService.getByEmailAndPassword(context.formParam("email"), context.formParam("password"));
 
-    private final UserService userService = new UserService();
-
-    public void authenticateLogin(Context context) {
-        String email = context.formParam("email");
-        String password = context.formParam("password");
-
-        User user = userService.getByEmailAndPassword(email, password);
-
-        if(user == null) {
+        if(user == null){
             throw new UnauthorizedResponse("Incorrect credentials");
         } else {
             String token = user.getRoleID() + "-TOKEN";
@@ -25,7 +20,7 @@ public class AuthenticationController {
         }
     }
 
-    public void authorizeManagerToken(Context context) {
+    public void handleAuthorizeManagerToken(Context context) {
         String header = context.header("Authorization");
 
         if(header != null){
