@@ -120,6 +120,7 @@ public class UserDaoImplementation implements UserDao {
                 return user;
             }
         } catch(SQLException e) {
+            LogUtility.logger.error("UserDaoImplementation.getByEmailAndPassword failed");
             e.printStackTrace();
         }
 

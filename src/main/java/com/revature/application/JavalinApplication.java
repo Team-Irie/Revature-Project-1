@@ -1,17 +1,18 @@
 package com.revature.application;
 
+import io.javalin.Javalin;
+
+import com.revature.daos.UserDao;
+import com.revature.services.UserService;
+import com.revature.controllers.UserController;
+import com.revature.daos.UserDaoImplementation;
 import com.revature.utilities.LogUtility;
+import com.revature.daos.ReimbursementDao;
+import com.revature.services.ReimbursementService;
+import com.revature.exceptions.AppExceptionHandler;
+import com.revature.daos.ReimbursementDaoImplementation;
 import com.revature.controllers.AuthenticationController;
 import com.revature.controllers.ReimbursementController;
-import com.revature.daos.ReimbursementDao;
-import com.revature.daos.ReimbursementDaoImplementation;
-import com.revature.daos.UserDao;
-import com.revature.daos.UserDaoImplementation;
-import com.revature.services.ReimbursementService;
-import com.revature.services.UserService;
-import io.javalin.Javalin;
-import com.revature.controllers.UserController;
-import com.revature.exceptions.AppExceptionHandler;
 
 import static io.javalin.apibuilder.ApiBuilder.*;
 

@@ -1,15 +1,15 @@
 package com.revature.controllers;
 
-import com.revature.models.User;
-import com.revature.services.UserService;
+import com.revature.daos.UserDaoImplementation;
 import io.javalin.http.Context;
+import com.revature.models.User;
 import io.javalin.http.ForbiddenResponse;
 import io.javalin.http.UnauthorizedResponse;
 
 public class AuthenticationController {
     public void handleAuthenticateLogin(Context context) {
-        UserService userService = new UserService();
-        User user = userService.getByEmailAndPassword(context.formParam("email"), context.formParam("password"));
+        UserDaoImplementation userDaoImplementation = new UserDaoImplementation();
+        User user = userDaoImplementation.getByEmailAndPassword(context.formParam("email"), context.formParam("password"));
 
         if(user == null){
             throw new UnauthorizedResponse("Incorrect credentials");
