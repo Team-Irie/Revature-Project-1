@@ -1,23 +1,16 @@
 package com.revature.services;
 
-import com.revature.daos.UserDaoImplementation;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
-import org.mockito.*;
-import org.junit.Before;
 import com.revature.models.User;
 import com.revature.daos.UserDao;
 import com.revature.types.UserRole;
-import org.mockito.internal.matchers.Matches;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+
 import static org.mockito.Mockito.*;
-import static org.mockito.ArgumentMatchers.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class UserServiceTest {
     private final UserDao userDaoMock = mock(UserDao.class);
@@ -25,37 +18,43 @@ class UserServiceTest {
 
     @Test
     void createShouldReturnTrue() {
-        boolean success = true;
         UserRole[] userRoles = UserRole.values();
-        User user = new User("userName","Password","FirstName","LastName","email@gmail.com",userRoles[0]);
-        when(userDaoMock.create(user)).thenReturn(success);
+        User user = new User(0,"username","password","first_name","last_name","email@gmail.com",userRoles[0]);
+        when(userDaoMock.create(user)).thenReturn(true);
         Assertions.assertTrue(userService.create(user));
     }
 
     @Test
-    void getAllShouldReturnList() {
-        //UserRole[] userRoles = UserRole.values();
-        //User user = new User("userName","Password","FirstName","LastName","email@gmail.com",userRoles[0]);
+    void getAllShouldReturnListOfUsers() {
         List<User> users = new ArrayList<>();
-        //users.add(user);
+        UserRole[] userRoles = UserRole.values();
+        User user = new User(1,"username","password","first_name","last_name","email@gmail.com",userRoles[0]);
+        users.add(user);
         when(userDaoMock.getAll()).thenReturn(users);
-        Assertions.assertTrue(users.isEmpty());
+        Assertions.assertFalse(userService.getAll().isEmpty());
     }
-    /*
+
     @Test
     void getByIDShouldReturnUser() {
+        UserRole[] userRoles = UserRole.values();
+        User user = new User(1,"username","password","first_name","last_name","email@gmail.com",userRoles[0]);
+        when(userDaoMock.getByID(1)).thenReturn(user);
+        Assertions.assertEquals(userService.getByID(1), user);
     }
 
     @Test
     void updateShouldReturnTrue() {
+        UserRole[] userRoles = UserRole.values();
+        User user = new User(0,"username","password","first_name","last_name","email@gmail.com",userRoles[0]);
+        when(userDaoMock.update(user)).thenReturn(true);
+        Assertions.assertTrue(userService.update(user));
     }
 
     @Test
     void deleteByIDShouldReturnTrue() {
-        doNothing().when(userDao).deleteByID(any());
-        boolean test = userService.deleteByID(any());
-        Mockito.verify(userDao).deleteByID(any());
-        Assertions.assertTrue(test);
+        UserRole[] userRoles = UserRole.values();
+        User user = new User(1,"username","password","first_name","last_name","email@gmail.com",userRoles[0]);
+        when(userDaoMock.deleteByID(1)).thenReturn(true);
+        Assertions.assertTrue(userService.deleteByID(1));
     }
-    */
 }
