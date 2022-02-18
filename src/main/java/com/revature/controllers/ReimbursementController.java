@@ -7,7 +7,7 @@ import com.revature.services.ReimbursementService;
 import java.sql.Timestamp;
 
 public class ReimbursementController {
-    private ReimbursementService reimbursementService;
+    private final ReimbursementService reimbursementService;
 
     public ReimbursementController(ReimbursementService userService){
         this.reimbursementService = userService;
