@@ -12,6 +12,24 @@ Csrc/main/java/com/revature/controllers/ReimbursementController.java,7\3\73ecbb
 d
 4src/main/java/com/revature/utilities/LogUtility.java,5\6\56e24d214452dab4effb1a1fe87a4d0347d987e8
 t
-Dsrc/main/java/com/revature/controllers/AuthenticationController.java,c\d\cdfd00e10c49a611c2bd54a374e2460ec7ef1bda
+Dsrc/main/java/com/revature/controllers/AuthenticationController.java,c/d/cdfd00e10c49a611c2bd54a374e2460ec7ef1bda
 ;
 src\log.txt,3/8/381d1a3f95003cd38a308453e44d4cc59ac4b947
+`
+0src/main/java/com/revature/models/UserRoles.java,f/d/fdd5c0aa2b892db39dcd7d0dc8f73fdff5b4153d
+[
++src/main/java/com/revature/models/User.java,c/1/c185cfbb3b91f30f1c6d725663f8833dc796c0aa
+k
+;src/main/java/com/revature/utilities/ConnectionUtility.java,1/4/140b2ecbace3435eb3dfcc267ea4519f7b334e7a
+^
+.src/main/java/com/revature/types/UserRole.java,5/3/5369ac48ec7426f9d727f6173e06438ee817f344
+d
+4src/main/java/com/revature/services/UserService.java,d/2/d2be61aa398606e15331a1cc4aeafeccda405368
+j
+:src/main/java/com/revature/daos/UserDaoImplementation.java,5/6/56f654bc758670f49c85191a05da434f231e58ae
+j
+:src/main/java/com/revature/controllers/UserController.java,3/3/33768bacf3381e61332680f8bd1e89d9a381ca67
+m
+=src/main/java/com/revature/application/ApplicationDriver.java,9/c/9cf10e091dd8dabc8e1d855f457f53ea7c3e390f
+\
+,src/main/java/com/revature/daos/UserDao.java,5/4/54a0dd0f0986c9e91923c6c522e50fa6aa0d3d07
