@@ -14,8 +14,7 @@ public class AuthenticationController {
         if(user == null){
             throw new UnauthorizedResponse("Incorrect credentials");
         } else {
-            String token = user.getRoleID() + "-TOKEN";
-            context.header("Authorization", token);
+            context.header("Authorization", context.json(user).toString());
             context.status(200);
         }
     }
