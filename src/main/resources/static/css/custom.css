@@ -1,0 +1,9 @@
+a.actionButton, a.actionButton:hover, a.actionButton:focus, a.actionButton:active {
+     text-decoration: none;
+     color: inherit;
+}
+
+.actionButton:hover {
+  background-color: blue !important;
+  color: white !important;
+}
