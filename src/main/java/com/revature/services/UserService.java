@@ -17,7 +17,11 @@ public class UserService {
 
     public List<User> getAll() { return userDao.getAll(); }
 
+    public List<User> getAllEmployees() { return userDao.getAllEmployees(); }
+
     public User getByID(int id) { return userDao.getByID(id); }
+
+    public User getEmployeeByID(int id) { return userDao.getEmployeeByID(id); }
 
     public User getByEmailAndPassword(String email, String password) { return userDao.getByEmailAndPassword(email, password); }
 

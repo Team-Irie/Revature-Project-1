@@ -23,8 +23,16 @@ public class UserController {
         context.json(userService.getAll());
     }
 
+    public void handleGetAllEmployees(Context context) {
+        context.json(userService.getAllEmployees());
+    }
+
     public void handleGetByID(Context context) {
         context.json(userService.getByID(Integer.parseInt(context.pathParam("id"))));
+    }
+
+    public void handleGetEmployeeByID(Context context) {
+        context.json(userService.getEmployeeByID(Integer.parseInt(context.pathParam("id"))));
     }
 
     public void handleGetByEmailAndPassword(Context context) {

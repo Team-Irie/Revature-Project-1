@@ -64,8 +64,70 @@ public class UserDaoImplementation implements UserDao {
     }
 
     @Override
+    public List<User> getAllEmployees() {
+        String sql = "select * from users where role_id = 0";
+        UserRole[] userRoles = UserRole.values();
+        List<User> users = new ArrayList<>();
+
+        try (Connection connection = ConnectionUtility.getConnection(); Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while(resultSet.next()) {
+                User user = new User();
+
+                user.setId(resultSet.getInt("id"));
+                user.setUsername(resultSet.getString("username"));
+                user.setPassword(resultSet.getString("password"));
+                user.setFirstName(resultSet.getString("first_name"));
+                user.setLastName(resultSet.getString("last_name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setRoleID(userRoles[resultSet.getInt("role_id")]);
+
+                users.add(user);
+            }
+
+        } catch (SQLException e) {
+            LogUtility.logger.error("UserDaoImplementation.getAll failed");
+            e.printStackTrace();
+        }
+
+        return users;
+    }
+
+    @Override
     public User getByID(int id) {
         String sql = "select * from users where id = ?";
+        UserRole[] userRoles = UserRole.values();
+
+        try (Connection connection = ConnectionUtility.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()){
+                User user = new User();
+
+                user.setId(id);
+                user.setUsername(resultSet.getString("username"));
+                user.setPassword(resultSet.getString("password"));
+                user.setFirstName(resultSet.getString("first_name"));
+                user.setLastName(resultSet.getString("last_name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setRoleID(userRoles[resultSet.getInt("role_id")]);
+
+                return user;
+            }
+        } catch (SQLException e){
+            LogUtility.logger.error("UserDaoImplementation.getByID failed");
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    @Override
+    public User getEmployeeByID(int id) {
+        String sql = "select * from users where role_id = 0 and id = ?";
         UserRole[] userRoles = UserRole.values();
 
         try (Connection connection = ConnectionUtility.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
