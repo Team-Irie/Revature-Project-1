@@ -1,5 +1,4 @@
 const fullName = Cookies.get('fullName');
-console.log('loaded');
 
 $(document).ready(function() {
   // print name in navbar
@@ -7,6 +6,12 @@ $(document).ready(function() {
   $('#viewEmployees').click(function() {
     console.log('clicked');
     fetch(`${window.origin}/users`)
-      .then(res => console.log(res));
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        
+      });
   });
 });

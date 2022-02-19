@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="../css/theme.min.css" rel="stylesheet">
+    <link href="../css/custom.css" rel="stylesheet">
 
 </head>
 
@@ -119,6 +120,7 @@
                     <!-- End Second Row -->
 
                     <!-- Content Row -->
+                    <a id="viewRequestsByEmployee" href="">
                     <div class="row d-flex justify-content-center">
                       <!-- View Requests By Employee -->
                       <div class="col-xl-4 col-md-6 mt-4 mb-4">
@@ -138,20 +140,21 @@
                           </div>
                       </div>
                     </div>
+                    </a>
                     <!-- End Third Row -->
 
                     <!-- Content Row -->
                     <div class="row d-flex justify-content-center">
                       <!-- View All Employees -->
-                        <div class="col-xl-3 col-md-6 mt-4 mb-4">
-                          <a id="viewEmployees" href="#">
+                        <div class="col-xl-4 col-md-6 mt-4 mb-4">
+                          <button id="viewEmployees" class="actionButton" style="border-style:none">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">View All Employees</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">View All Employees &nbsp;&nbsp;&nbsp;</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-sync fa-2x text-gray-300"></i>
@@ -159,7 +162,7 @@
                                     </div>
                                 </div>
                             </div>
-                          </a>
+                          </button>
                         </div>
                     </div>
                     <!-- End Fourth Row -->
@@ -228,7 +231,7 @@
     <script src="../vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../js/employee-home.js"></script>
+    <script src="../js/manager-home.js"></script>
 
 </body>
 
