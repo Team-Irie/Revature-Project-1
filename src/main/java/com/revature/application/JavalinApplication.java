@@ -13,6 +13,7 @@ import com.revature.exceptions.AppExceptionHandler;
 import com.revature.daos.ReimbursementDaoImplementation;
 import com.revature.controllers.AuthenticationController;
 import com.revature.controllers.ReimbursementController;
+import io.javalin.http.staticfiles.Location;
 
 import static io.javalin.apibuilder.ApiBuilder.*;
 
@@ -29,7 +30,9 @@ public class JavalinApplication {
 
     private final AuthenticationController authenticationController = new AuthenticationController();
 
-    private final Javalin javalin = Javalin.create().routes(() -> {
+    private Javalin javalin = Javalin.create(config -> {
+        config.addStaticFiles("/static", Location.CLASSPATH);
+    }).routes(() -> {
         path("users", () -> {
             get(userController::handleGetAll);
             post(userController::handleCreate);
