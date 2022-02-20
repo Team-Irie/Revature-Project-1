@@ -29,8 +29,5 @@ S
 #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
 j
 :src/main/java/com/revature/controllers/UserController.java,3/3/33768bacf3381e61332680f8bd1e89d9a381ca67
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 t
 Dsrc/main/java/com/revature/controllers/AuthenticationController.java,c/d/cdfd00e10c49a611c2bd54a374e2460ec7ef1bda
