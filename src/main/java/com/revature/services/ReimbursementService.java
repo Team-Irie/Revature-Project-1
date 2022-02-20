@@ -7,9 +7,7 @@ import com.revature.models.Reimbursement;
 import com.revature.daos.ReimbursementDao;
 
 public class ReimbursementService {
-    private ReimbursementDao reimbursementDao;
-
-    public ReimbursementService() {}
+    private final ReimbursementDao reimbursementDao;
 
     public ReimbursementService(ReimbursementDao reimbursementDao){
         this.reimbursementDao = reimbursementDao;
