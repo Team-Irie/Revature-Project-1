@@ -1,4 +1,0 @@
-2022-02-19 09:54:04 INFO  LogUtility:10 - GET request made to: /users
-2022-02-19 09:54:18 INFO  LogUtility:10 - GET request made to: /reimbursements
-2022-02-19 09:54:39 INFO  LogUtility:10 - GET request made to: /users
-2022-02-19 09:55:48 INFO  LogUtility:10 - POST request made to: /login
