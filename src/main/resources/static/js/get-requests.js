@@ -7,7 +7,7 @@ fetch(`${window.origin}/reimbursements`)
     const reimbursementsLength = reimbursements.length;
 
     for (let i = 0; i < reimbursementsLength; i++) {
-      let amount = `<td>${reimbursements[i].amount}</td>`;
+      let amount = `<td>$${reimbursements[i].amount}</td>`;
       let submitted = `<td>${reimbursements[i].submitted}</td>`;
       let type = `<td>${reimbursements[i].typeID}</td>`;
       let description = `<td>${reimbursements[i].description}</td>`;
