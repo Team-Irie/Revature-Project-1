@@ -26,7 +26,6 @@ $(document).ready(function() {
       typeID: type_id
     }
 
-    // Example POST method implementation:
     async function postData(url = '', data = {}) {
       // Default options are marked with *
       const response = await fetch(url, {
@@ -46,6 +45,5 @@ $(document).ready(function() {
       })
       .catch(err => console.log(err));
 
-    console.log(JSON.stringify(reimbursementObject));
-  });
+  }); // end submit click
 });

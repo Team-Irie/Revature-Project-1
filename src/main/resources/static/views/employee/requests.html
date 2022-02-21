@@ -64,9 +64,14 @@
           <div class="row d-flex justify-content-center">
 
             <div class="container-fluid mx-auto">
+              <input id="pendingCheckbox" type="checkbox" name="Pending" value="Pending">
+              <label for="pendingCheckbox">Pending</label>
+              &nbsp;
+              <input id="resolvedCheckbox" type="checkbox" name="Resolved" value="Resolved">
+              <label for="resolvedCheckbox">Resolved</label>
 
               <!-- Requests table -->
-              <table class="table table-striped mx-auto">
+              <table id="reimbursementsTable" class="table table-striped mx-auto">
                 <thead>
                   <tr>
                     <th scope="col">Amount</th>
@@ -79,15 +84,6 @@
                   </tr>
                 </thead>
                 <tbody id="tableBody">
-                  <tr>
-                    <td>$20</td>
-                    <td>Feb 15, 2022</td>
-                    <td>FOOD</td>
-                    <td>lunch with client</td>
-                    <td>Pending</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                  </tr>
                 </tbody>
               </table>
               <!-- end Requests table -->

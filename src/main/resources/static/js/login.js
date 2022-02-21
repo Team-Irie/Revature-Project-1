@@ -3,68 +3,59 @@ console.log(window.origin);
 function handleLogin(e) {
   e.preventDefault();
 
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  const loginMessage = document.getElementById('loginMessage');
-  const errorMessage = document.getElementById('errorMessage');
+  const email = $('#email').val();
+  const password = $('#password').val();
+  const loginMessage = $('#loginMessage');
+  const errorMessage = $('#errorMessage');
 
+  let loginObject = {
+    email: email,
+    password: password
+  };
 
-  /*
-  fetch( url for user endpoint )
-    .then((res) => res.json())
-    .then((data) => {
-      // set cookie with user data?
-      if roleID === 'EMPLOYEE', login as employee;
-      if roleID === 'FINANCE_MANAGER', login as manager
-    })
-    .catch((err) => {
-      // handle error;
+  async function postData(url = '', data = {}) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        // 'Content-Type': 'application/json'
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: data // body data type must match "Content-Type" header
     });
-  */
-
-  // create users array for testing purposes, mocking data returned from server
-  const users = [
-    {
-      id: 1,
-      username: 'ryansy',
-      password: 'password123',
-      first_name: 'Ryan',
-      last_name: 'Sy',
-      email:'ryanbsy@gmail.com',
-      roleID: 'EMPLOYEE'
-    },
-    {
-      id: 2,
-      username: 'tonymontana',
-      password: 'password123',
-      first_name: 'Tony',
-      last_name: 'Montana',
-      email:'scarface@gmail.com',
-      roleID: "FINANCE_MANAGER"
-    },
-  ];
-
-  for (let i = 0; i < users.length; i++) {
-    if (email === users[i].email && password === users[i].password) {
-      const user = users[i];
-      Cookies.set('username', user.username);
-      Cookies.set('fullName', `${user.first_name} ${user.last_name}`);
-      Cookies.set('id', user.id);
-      Cookies.set('roleID', user.roleID);
-      if (user.roleID === 'EMPLOYEE') {
-        window.location = `${window.origin}/views/employee/dashboard.html`;
-      }
-      if (user.roleID === 'FINANCE_MANAGER') {
-        window.location = `${window.origin}/views/manager/dashboard.html`;
-      }
-      loginMessage.style.color = 'green';
-      loginMessage.innerHTML = 'Logging in...';
-      return;
-    } else {
-      loginMessage.style.color = 'red';
-      loginMessage.innerHTML = "Invalid credentials, please try again."
-    }
+    console.log('response:', response);
+    return response.json(); // parses JSON response into native JavaScript objects
   }
+
+  postData(`${window.origin}/login`, loginObject)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(err => console.log(err));
+
+
+  // for (let i = 0; i < users.length; i++) {
+  //   if (email === users[i].email && password === users[i].password) {
+  //     const user = users[i];
+  //     Cookies.set('username', user.username);
+  //     Cookies.set('fullName', `${user.first_name} ${user.last_name}`);
+  //     Cookies.set('id', user.id);
+  //     Cookies.set('roleID', user.roleID);
+  //     if (user.roleID === 'EMPLOYEE') {
+  //       window.location = `${window.origin}/views/employee/dashboard.html`;
+  //     }
+  //     if (user.roleID === 'FINANCE_MANAGER') {
+  //       window.location = `${window.origin}/views/manager/dashboard.html`;
+  //     }
+  //     loginMessage.style.color = 'green';
+  //     loginMessage.innerHTML = 'Logging in...';
+  //     return;
+  //   } else {
+  //     loginMessage.style.color = 'red';
+  //     loginMessage.innerHTML = "Invalid credentials, please try again."
+  //   }
+  // }
 
 } // end handleLogin() function
 

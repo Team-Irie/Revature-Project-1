@@ -59,7 +59,7 @@ $(document).ready(function() {
     // reset input values
     $('#amount').val('');
     $('#description').val('');
-    ('#type_id').val('default');
+    ('#type_id').val('');
 
   });
   // end creare reimbursement
