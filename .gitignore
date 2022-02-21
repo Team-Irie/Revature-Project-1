@@ -109,5 +109,6 @@ Temporary Items
 .idea
 
 src\\log.txt
+src\log.txt
 
 .idea/sonarlint/issuestore/index.pb

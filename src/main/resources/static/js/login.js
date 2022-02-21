@@ -52,10 +52,10 @@ function handleLogin(e) {
       Cookies.set('id', user.id);
       Cookies.set('roleID', user.roleID);
       if (user.roleID === 'EMPLOYEE') {
-        window.location = `${window.origin}/views/employee-home.html`;
+        window.location = `${window.origin}/views/employee/dashboard.html`;
       }
       if (user.roleID === 'FINANCE_MANAGER') {
-        window.location = `${window.origin}/views/manager-home.html`;
+        window.location = `${window.origin}/views/manager/dashboard.html`;
       }
       loginMessage.style.color = 'green';
       loginMessage.innerHTML = 'Logging in...';

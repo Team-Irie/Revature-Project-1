@@ -6,21 +6,6 @@ $(document).ready(function() {
   // print name in navbar
   $('#usernameContainer').text(fullName);
 
-  //hide submit request form / confirmationMessageContainer on document load
-  $('#submitRequestView').hide();
-
-  // show submit request form / hide dashboard
-  $('#submitRequestButton').click(function() {
-    $('#employeeDashboard').hide();
-    $('#submitRequestView').show();
-  });
-
-  // show dashboard / hide submit request form
-  $('#cancelButton').click(function() {
-    $('#submitRequestView').hide();
-    $('#employeeDashboard').show();
-  });
-
   // create reimbursement
   $('#submitButton').click(function(e) {
     e.preventDefault();
@@ -64,9 +49,19 @@ $(document).ready(function() {
 
     console.log(JSON.stringify(reimbursementObject));
 
-    $('#submitRequestView').hide();
-    $('#employeeDashboard').show();
+    // show confirmationMessage
     $('#confirmationMessageContainer').removeClass('invisible');
     $('#confirmationMessage').text('Reimburement has been submitted.');
+    $('#confirmationMessageCloseButton').click(function() {
+      $('#confirmationMessageContainer').addClass('invisible');
+    });
+
+    // reset input values
+    $('#amount').val('');
+    $('#description').val('');
+    ('#type_id').val('default');
+
   });
+  // end creare reimbursement
+
 });
