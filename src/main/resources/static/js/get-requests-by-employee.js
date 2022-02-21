@@ -51,19 +51,33 @@ fetch(`${window.origin}/reimbursements`)
         let resolver = `<td class="resolvedBy">${reimbursements[i].resolver}</td>`;
         let resolved = `<td>${reimbursements[i].resolved === null ? 'N/A' : new Date(reimbursements[i].resolved).toLocaleString('en-US', {timeZone: 'UTC'})}</td>`;
 
-        let tableRow = `<tr>${amount}${submitted}${type}${description}${status}${resolver}${resolved}</tr>`
+        let tableRow = `<tr class="${reimbursements[i].statusID}">${amount}${submitted}${type}${description}${status}${resolver}${resolved}</tr>`
         $('#tableBody').append(tableRow);
       }
     }
 
-    // show/hide based on status
-    // if (!$('pendingCheckbox').is(':checked')) {
-    //   $('#tableBody .reimbursementStatus').each(function() {
-    //     if ($(this).text() == 'Pending') {
-    //       $(this).hide();
-    //     } else {
-    //       $(this).show();
-    //     }
-    //   })
-    // }
+    $('#requestsFilter').change(function() {
+      console.log('requestsFilter value:', this.value);
+      if (this.value == 0) {
+        $('.0').show();
+        $('.1').hide();
+        $('.2').hide();
+      }
+      if (this.value == 1) {
+        $('.1').show();
+        $('.0').hide();
+        $('.2').hide();
+      }
+      if (this.value == 2) {
+        $('.2').show();
+        $('.0').hide();
+        $('.1').hide();
+      }
+      if (this.value == 3) {
+        $('.0').show();
+        $('.1').show();
+        $('.2').show();
+      }
+    });
+
   });
