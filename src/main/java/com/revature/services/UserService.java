@@ -5,9 +5,7 @@ import com.revature.models.User;
 import com.revature.daos.UserDao;
 
 public class UserService {
-    private UserDao userDao;
-
-    public UserService() {}
+    private final UserDao userDao;
 
     public UserService(UserDao userDao){
         this.userDao = userDao;
