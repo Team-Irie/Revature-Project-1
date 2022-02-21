@@ -81,10 +81,10 @@
 
               <!-- Content Row -->
               <div class="row d-flex justify-content-center">
-                <!-- View Requests -->
+                <!-- View All Employees -->
                 <div class="col-xl-6 col-md-6 mt-4 mb-4">
                   <a href="all-employees.html">
-                    <div class="card border-left-warning shadow h-100 py-2">
+                    <div class="card border-left-primary shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
@@ -93,7 +93,27 @@
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">View All Employees</div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    <i class="fas fa-user fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- View Resolved Requests -->
+                <div class="col-xl-6 col-md-6 mt-4 mb-4">
+                  <a href="resolved-requests.html">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">View Resolved Requests</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-check fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
@@ -103,22 +123,6 @@
               </div>
 
               <hr>
-
-              <!-- Content Row -->
-              <div class="row d-flex justify-content-center">
-                <!-- Filter Requests -->
-                <div class="col-xl-4 col-md-6 mt-4 mb-4">
-                  <label for="requestsFilter">Filter by:</label>
-                  <select id="requestsFilter" class="form-control"
-                      name="requestsFilter">
-                      <option value="0" selected>Show All</option>
-                      <option value="1">Pending</option>
-                      <option value="2">Approved</option>
-                      <option value="3">Denied</option>
-                    </select>
-                </div>
-              </div>
-
 
               <!-- Content Row -->
               <!-- Requests Table Container -->
