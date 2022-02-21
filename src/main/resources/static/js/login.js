@@ -9,8 +9,8 @@ function handleLogin(e) {
   const errorMessage = $('#errorMessage');
 
   let loginObject = {
-    email: email,
-    password: password
+    email: 'hkearle0@loc.gov',
+    password: '8ZkVeA'
   };
 
   async function postData(url = '', data = {}) {
@@ -18,12 +18,12 @@ function handleLogin(e) {
     const response = await fetch(url, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       headers: {
-        // 'Content-Type': 'application/json'
+      //   // 'Content-Type': 'application/json'
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: data // body data type must match "Content-Type" header
     });
-    console.log('response:', response);
+    console.log('response:', response.json());
     return response.json(); // parses JSON response into native JavaScript objects
   }
 
