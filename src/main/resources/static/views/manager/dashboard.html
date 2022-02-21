@@ -63,7 +63,7 @@
             <div id="managerDashboard" class="container-fluid mx-auto">
 
               <!-- Page Heading -->
-              <div class="d-sm-flex align-items-center justify-content-between mt-5 mb-4">
+              <div class="d-sm-flex align-items-center justify-content-between mt-5 mb-2">
                   <h1 class="h3 mx-auto text-gray-800">Manager Dashboard</h1>
               </div>
 
@@ -101,6 +101,22 @@
                   </a>
                 </div>
               </div>
+
+              <!-- Content Row -->
+              <div class="row d-flex justify-content-center">
+                <!-- Filter Requests -->
+                <div class="col-xl-4 col-md-6 mt-4 mb-4">
+                  <label for="requestsFilter">Filter by:</label>
+                  <select id="requestsFilter" class="form-control"
+                      name="requestsFilter">
+                      <option value="0" selected>Show All</option>
+                      <option value="1">Pending</option>
+                      <option value="2">Approved</option>
+                      <option value="3">Denied</option>
+                    </select>
+                </div>
+              </div>
+
 
               <!-- Content Row -->
               <!-- Requests Table Container -->
